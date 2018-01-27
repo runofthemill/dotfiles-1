@@ -149,8 +149,6 @@ cask 'font-ubuntumono-nerd-font-mono'
 
 # Install Mac App Store apps
 mas '1Password', id: 443987910
-mas 'Gapplin', id: 768053424
 mas 'Giphy Capture', id: 668208984
 mas 'Spark', id: 1176895641
-mas 'Unsplash Wallpapers', id: 1284863847
 mas 'Yoink', id: 457622435
