@@ -41,14 +41,19 @@ ln -s ./.mackup.cfg $HOME/.mackup.cfg
 
 echo ""
 echo "Have you set up an ssh key for Git?  (y/n)"
-read -r response
-if [[ ! $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+read -r response1
+if [[ ! $response1 =~ ^([yY][eE][sS]|[yY])$ ]]; then
     echo "Enter email address for ssh key"
     read email
-    ssh-keygen -t rsa -C "$email"
+    ssh-keygen -t rsa -b 4096 -C "$email"
     #copy ssh key to clipboard
     pbcopy < ~/.ssh/id_rsa.pub
     echo "SSH key copied to clipboard"
 fi
 
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo ""
+echo "Do you want to install Oh My Zsh?  (y/n)"
+read -r response2
+if [[ ! $response2 =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
