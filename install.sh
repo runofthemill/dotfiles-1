@@ -29,9 +29,8 @@ npm install --global yarn
 
 . "$DOTFILES_DIR/npm.sh"
 
-# Create a Sites directory
-# This is a default directory for macOS user accounts but doesn't comes pre-installed
-mkdir $HOME/Sites
+# Create a Projects directory
+mkdir $HOME/Projects
 
 # Symlink the Mackup config file to the home directory
 ln -s ./.mackup.cfg $HOME/.mackup.cfg
