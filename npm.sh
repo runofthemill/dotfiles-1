@@ -7,7 +7,6 @@ packages=(
   historie
   lambda-pure-prompt
   nodemon
-  npm
   pm2
   release-it
   spot
