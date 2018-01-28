@@ -1,6 +1,3 @@
-# Path to your dotfiles installation.
-export DOTFILES=$HOME/.dotfiles
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -55,7 +52,7 @@ BULLETTRAIN_PROMPT_ORDER=(
 HIST_STAMPS="dd.mm.yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$DOTFILES
+ZSH_CUSTOM=$HOME/.dotfiles/zsh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -66,10 +63,6 @@ plugins=(composer git git-extras httpie github npm sublime vagrant laravel5)
 
 # Activate Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
