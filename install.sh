@@ -3,10 +3,6 @@
 export DOTFILES_DIR
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-echo "Installing Xcode CLI Tools..."
-
-xcode-select --install
-
 echo "Setting up your Mac..."
 
 # Check for Homebrew and install if we don't have it
@@ -21,19 +17,20 @@ brew update
 brew tap homebrew/bundle
 brew bundle
 
+# Add ZSH to list of shells
+grep "/usr/local/bin/zsh" /private/etc/shells &>/dev/null || sudo bash -c "echo /usr/local/bin/zsh >> /private/etc/shells"
+
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
 # Install global NPM packages
-npm install --global yarn
-
-. "$DOTFILES_DIR/npm.sh"
+# . npm.sh
 
 # Create a Projects directory
-mkdir $HOME/Projects
+# mkdir $HOME/Projects
 
 # Symlink the Mackup config file to the home directory
-ln -s ./.mackup.cfg $HOME/.mackup.cfg
+# ln -s ./.mackup.cfg $HOME/.mackup.cfg
 
 # Set macOS preferences
 # -# We will run this last because this will reload the shell
@@ -54,6 +51,6 @@ fi
 echo ""
 echo "Do you want to install Oh My Zsh?  (y/n)"
 read -r response2
-if [[ ! $response2 =~ ^([yY][eE][sS]|[yY])$ ]]; then
+if [[ $response2 =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
