@@ -15,6 +15,7 @@ packages=(
   tldr
   underscore-cli
   vtop
+  yarn
 )
 
-yarn global add "${packages[@]}"
+npm install --global "${packages[@]}"
