@@ -62,7 +62,6 @@ cask 'dash'
 cask 'dropbox'
 cask 'endurance'
 cask 'eve'
-cask 'fantastical'
 cask 'firefox'
 cask 'flash-player'
 cask 'flux'
@@ -72,7 +71,6 @@ cask 'hammerspoon'
 cask 'insomnia'
 cask 'iterm2'
 cask 'jadengeller-helium'
-cask 'kaleidoscope'
 cask 'karabiner-elements'
 cask 'logitech-gaming-software'
 cask 'logitech-options'
@@ -148,6 +146,8 @@ cask 'font-ubuntumono-nerd-font-mono'
 
 # Install Mac App Store apps
 mas '1Password', id: 443987910
+mas 'Fantastical 2', id: 975937182
 mas 'Giphy Capture', id: 668208984
+mas 'Kaleidoscope', id: 587512244
 mas 'Spark', id: 1176895641
 mas 'Yoink', id: 457622435
