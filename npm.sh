@@ -1,7 +1,6 @@
 #!/bin/sh
 
 packages=(
-  get-port-cli
   ghwd
   gtop
   historie
@@ -15,7 +14,6 @@ packages=(
   tldr
   underscore-cli
   vtop
-  yarn
 )
 
-npm install --global "${packages[@]}"
+yarn global add "${packages[@]}" --prefix /usr/local

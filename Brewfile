@@ -24,6 +24,7 @@ brew 'bash'
 brew 'grep'
 
 # Install Binaries
+brew 'ansible'
 brew 'composer'
 brew 'diff-so-fancy'
 brew 'exa'

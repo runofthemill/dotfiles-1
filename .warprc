@@ -1,0 +1,14 @@
+c:~/Code
+tr:~/Code/TeamRubicon
+p:~/Code/TeamRubicon/leadership_portal
+s:~/Code/TeamRubicon/teamrubiconusa.org
+psite:~/Code/TeamRubicon/leadership_portal/site
+ptrellis:~/Code/TeamRubicon/leadership_portal/trellis
+ptheme:~/Code/TeamRubicon/leadership_portal/site/web/app/themes/portal
+ssite:~/Code/TeamRubicon/teamrubiconusa.org/site
+strellis:~/Code/TeamRubicon/teamrubiconusa.org/trellis
+stheme:~/Code/TeamRubicon/teamrubiconusa.org/site/web/app/themes/TeamRubicon
+redesign:~/Code/TeamRubicon/website-redesign
+redesign-theme:~/Code/TeamRubicon/website-redesign/site/web/app/themes/teamrubiconusa
+redesign-trellis:~/Code/TeamRubicon/website-redesign/trellis
+redesign-site:~/Code/TeamRubicon/website-redesign/site
