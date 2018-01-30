@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Probably can/should delete
-# export DOTFILES_DIR
-# DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export DOTFILES_DIR
+DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo "Setting up your Mac..."
 
@@ -30,12 +30,11 @@ echo "Installing global NPM packages..."
 . npm.sh
 
 echo "Symlinking some files..."
-# Symlink .zshrc, .gitconfig, .gitignore_global, .mackup.cfg, .warprc
-ln -s ./.zshrc $HOME/.zshrc
-ln -s ./.gitconfig $HOME/.gitconfig
-ln -s ./.gitignore_global $HOME/.gitignore_global
-ln -s ./.mackup.cfg $HOME/.mackup.cfg
-ln -s ./.warprc $HOME/.warprc
+# Symlink .gitconfig, .gitignore_global, .mackup.cfg, .warprc
+ln -s $DOTFILES_DIR/.gitconfig $HOME/.gitconfig
+ln -s $DOTFILES_DIR/.gitignore_global $HOME/.gitignore_global
+ln -s $DOTFILES_DIR/.mackup.cfg $HOME/.mackup.cfg
+ln -s $DOTFILES_DIR/.warprc $HOME/.warprc
 
 echo "Creating ~/Projects/ directory..."
 # Create a Projects directory

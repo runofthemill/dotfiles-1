@@ -32,8 +32,10 @@ First, go through the checklist below to make sure you didn't forget anything be
 2. `xcode-select --install`
 3. `git clone https://github.com/runofthemill/dotfiles-1 ~/.dotfiles`
 4. `cd ~/.dotfiles && source install.sh`
-5. Restore preferences by running `mackup restore`
-6. Optional: `cd ~/.dotfiles/opt && brew bundle`
+5. `rm ~/.zshrc`
+6. `ln -s ~/.dotfiles/.zshrc ~/.zshrc`
+7. Restore preferences by running `mackup restore`
+8. Optional: `cd ~/.dotfiles/opt && brew bundle`
 
 Sync via Dropbox:
 - iTerm 2
