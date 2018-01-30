@@ -1,0 +1,7 @@
+# Install Mac App Store apps
+mas "1Password", id: 443987910
+mas "Fantastical 2", id: 975937182
+mas "GIPHY CAPTURE", id: 668208984
+mas "Kaleidoscope", id: 587512244
+mas "Spark", id: 1176895641
+mas "Yoink", id: 457622435

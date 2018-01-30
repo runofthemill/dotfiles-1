@@ -1,165 +1,141 @@
-# Taps
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
-tap 'caskroom/drivers'
-tap 'homebrew/php'
-
-# Install ZSH
-brew 'zsh'
-brew 'zsh-autosuggestions'
-brew 'zsh-completions'
-brew 'zsh-syntax-highlighting'
-
-# Install GNU core utilities (those that come with macOS are outdated)
-brew 'coreutils'
-
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brew 'findutils'
-
-# Install Bash 4
-brew 'bash'
-
-# Install more recent versions of some macOS tools
-brew 'grep'
-
-# Install Binaries
-brew 'ansible'
-brew 'composer'
-brew 'diff-so-fancy'
-brew 'exa'
-brew 'git'
-brew 'httpie'
-brew 'hub'
-brew 'mackup'
-brew 'mas'
-brew 'nano'
-brew 'node'
-brew 'ssh-copy-id'
-brew 'tidy-html5'
-brew 'trash'
-brew 'tree'
-brew 'unar'
-brew 'wget'
-brew 'wifi-password'
-brew 'yarn'
-
-# Development
-brew 'php71'
-brew 'mariadb'
-brew 'wp-cli'
-brew 'pre-commit'
-
-# Apps
-cask 'alfred'
-cask 'appcleaner'
-cask 'bartender'
-cask 'beardedspice'
-cask 'betterzip'
-cask 'caffeine'
-cask 'cheatsheet'
-cask 'cyberduck'
-cask 'dash'
-cask 'dropbox'
-cask 'endurance'
-cask 'eve'
-cask 'evernote'
-cask 'firefox'
-cask 'flash-player'
-cask 'flux'
-cask 'forklift'
-cask 'franz'
-cask 'gitkraken'
-cask 'google-chrome'
-cask 'hammerspoon'
-cask 'insomnia'
-cask 'iterm2'
-cask 'jadengeller-helium'
-cask 'karabiner-elements'
-cask 'local-by-flywheel'
-cask 'logitech-gaming-software'
-cask 'logitech-options'
-cask 'logitech-unifying'
-cask 'macdown'
-cask 'muzzle'
-cask 'mysqlworkbench'
-cask 'now'
-cask 'phpstorm'
-cask 'postman'
-cask 'private-internet-access'
-cask 'screenflow'
-cask 'sequel-pro'
-cask 'shuttle'
-cask 'silverlight'
-cask 'sketch'
-cask 'skitch'
-cask 'slack'
-cask 'spacelauncher'
-cask 'spectacle'
-cask 'spotify'
-cask 'station'
-cask 'sublime-text'
-cask 'the-unarchiver'
-cask 'transmission'
-cask 'transmit'
-cask 'ui-browser'
-cask 'vagrant'
-cask 'vagrant-manager'
-cask 'virtualbox' # will fail :(
-cask 'visual-studio-code'
-cask 'vlc'
-cask 'zoomus'
-
-# Quicklook
-cask 'qlcolorcode'
-cask 'qlmarkdown'
-cask 'qlstephen'
-cask 'qlvideo'
-cask 'qlimagesize'
-cask 'quicklook-json'
-cask 'suspicious-package'
-cask 'webpquicklook'
-
-# Fonts
-cask 'font-droidsansmono-nerd-font-mono'
-cask 'font-fira-code'
-cask 'font-fira-mono'
-cask 'font-fira-sans'
-cask 'font-firacode-nerd-font-mono'
-cask 'font-firamono-nerd-font-mono'
-cask 'font-hack'
-cask 'font-hack-nerd-font'
-cask 'font-hack-nerd-font-mono'
-cask 'font-inconsolata-g-for-powerline'
-cask 'font-input'
-cask 'font-lato'
-cask 'font-lora'
-cask 'font-merriweather'
-cask 'font-montserrat'
-cask 'font-noto-sans'
-cask 'font-noto-sans-mono'
-cask 'font-office-code-pro'
-cask 'font-open-sans'
-cask 'font-open-sans-condensed'
-cask 'font-pt-sans'
-cask 'font-raleway'
-cask 'font-roboto'
-cask 'font-roboto-condensed'
-cask 'font-roboto-slab'
-cask 'font-robotomono-nerd-font-mono'
-cask 'font-source-code-pro'
-cask 'font-source-code-pro-for-powerline'
-cask 'font-source-sans-pro'
-cask 'font-source-serif-pro'
-cask 'font-ubuntu-nerd-font'
-cask 'font-ubuntu-nerd-font-mono'
-cask 'font-ubuntumono-nerd-font'
-cask 'font-ubuntumono-nerd-font-mono'
-
-# Install Mac App Store apps
-mas '1Password', id: 443987910
-mas 'Fantastical 2', id: 975937182
-mas 'Giphy Capture', id: 668208984
-mas 'Kaleidoscope', id: 587512244
-mas 'Spark', id: 1176895641
-mas 'Yoink', id: 457622435
+tap "homebrew/core"
+tap "homebrew/php"
+tap "homebrew/bundle"
+tap "caskroom/drivers"
+tap "caskroom/fonts"
+tap "caskroom/versions"
+tap "caskroom/cask"
+brew "ansible", link: false
+brew "bash"
+brew "coreutils"
+brew "diff-so-fancy"
+brew "exa"
+brew "findutils"
+brew "git"
+brew "grep"
+brew "httpie"
+brew "hub"
+brew "mackup"
+brew "mariadb"
+brew "mas"
+brew "nano"
+brew "node"
+brew "pre-commit"
+brew "ssh-copy-id"
+brew "tidy-html5"
+brew "trash"
+brew "tree"
+brew "unar"
+brew "wget"
+brew "wifi-password"
+brew "yarn"
+brew "zsh"
+brew "zsh-autosuggestions"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+brew "homebrew/php/composer"
+brew "homebrew/php/php71"
+brew "homebrew/php/wp-cli"
+cask "alfred"
+cask "appcleaner"
+cask "bartender"
+cask "beardedspice"
+cask "betterzip"
+cask "caffeine"
+cask "cheatsheet"
+cask "cyberduck"
+cask "dash"
+cask "discord"
+cask "dropbox"
+cask "endurance"
+cask "eve"
+cask "eve-launcher"
+cask "evernote"
+cask "firefox"
+cask "flash-player"
+cask "flux"
+cask "gitkraken"
+cask "google-chrome"
+cask "hammerspoon"
+cask "insomnia"
+cask "iterm2"
+cask "jadengeller-helium"
+cask "karabiner-elements"
+cask "league-of-legends"
+cask "local-by-flywheel"
+cask "macdown"
+cask "mumble"
+cask "mysqlworkbench"
+cask "now"
+cask "nvidia-geforce-now"
+cask "phpstorm"
+cask "postman"
+cask "qlcolorcode"
+cask "qlimagesize"
+cask "qlmarkdown"
+cask "qlstephen"
+cask "qlvideo"
+cask "quicklook-json"
+cask "screenflow"
+cask "sequel-pro"
+cask "shuttle"
+cask "silverlight"
+cask "sketch"
+cask "skitch"
+cask "slack"
+cask "spectacle"
+cask "spotify"
+cask "sublime-text"
+cask "suspicious-package"
+cask "the-unarchiver"
+cask "transmission"
+cask "transmit"
+cask "vagrant"
+cask "virtualbox"
+cask "visual-studio-code"
+cask "vlc"
+cask "webpquicklook"
+cask "zoomus"
+cask "caskroom/drivers/logitech-gaming-software"
+cask "caskroom/drivers/logitech-options"
+cask "caskroom/drivers/logitech-unifying"
+cask "caskroom/fonts/font-droidsansmono-nerd-font-mono"
+cask "caskroom/fonts/font-fira-code"
+cask "caskroom/fonts/font-fira-mono"
+cask "caskroom/fonts/font-fira-sans"
+cask "caskroom/fonts/font-firacode-nerd-font-mono"
+cask "caskroom/fonts/font-firamono-nerd-font-mono"
+cask "caskroom/fonts/font-hack"
+cask "caskroom/fonts/font-hack-nerd-font"
+cask "caskroom/fonts/font-hack-nerd-font-mono"
+cask "caskroom/fonts/font-inconsolata-g-for-powerline"
+cask "caskroom/fonts/font-input"
+cask "caskroom/fonts/font-lato"
+cask "caskroom/fonts/font-lora"
+cask "caskroom/fonts/font-merriweather"
+cask "caskroom/fonts/font-montserrat"
+cask "caskroom/fonts/font-noto-sans"
+cask "caskroom/fonts/font-noto-sans-mono"
+cask "caskroom/fonts/font-office-code-pro"
+cask "caskroom/fonts/font-open-sans"
+cask "caskroom/fonts/font-open-sans-condensed"
+cask "caskroom/fonts/font-pt-sans"
+cask "caskroom/fonts/font-raleway"
+cask "caskroom/fonts/font-roboto"
+cask "caskroom/fonts/font-roboto-condensed"
+cask "caskroom/fonts/font-roboto-slab"
+cask "caskroom/fonts/font-robotomono-nerd-font-mono"
+cask "caskroom/fonts/font-source-code-pro"
+cask "caskroom/fonts/font-source-code-pro-for-powerline"
+cask "caskroom/fonts/font-source-sans-pro"
+cask "caskroom/fonts/font-source-serif-pro"
+cask "caskroom/fonts/font-ubuntu-nerd-font"
+cask "caskroom/fonts/font-ubuntu-nerd-font-mono"
+cask "caskroom/fonts/font-ubuntumono-nerd-font"
+cask "caskroom/fonts/font-ubuntumono-nerd-font-mono"
+mas "1Password", id: 443987910
+mas "Fantastical 2", id: 975937182
+mas "GIPHY CAPTURE", id: 668208984
+mas "Kaleidoscope", id: 587512244
+mas "Spark", id: 1176895641
+mas "Yoink", id: 457622435
