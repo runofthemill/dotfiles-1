@@ -9,12 +9,15 @@ ZSH_THEME="bullet-train"
 BULLETTRAIN_PROMPT_ORDER=(
   git
   dir
-  context
   time
+  nvm
   status
 )
 
 # BULLETTRAIN_STATUS_EXIT_SHOW=true
+BULLETTRAIN_PROMPT_ADD_NEWLINE=false
+BULLETTRAIN_IS_SSH_CLIENT=true
+BULLETTRAIN_DIR_EXTENDED=2
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -58,24 +61,37 @@ ZSH_CUSTOM=$HOME/.dotfiles/zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(composer git git-extras httpie github npm sublime vagrant laravel5)
-# old plugins: plugins=(git common-aliases composer vagrant npm dircycle history per-directory-history sudo wd wp-cli)
+plugins=(
+	zsh-nvm
+	colored-man-pages
+	common-aliases
+	dircycle
+	extract
+	fasd
+	fl
+	gitfast
+	git-flow
+	httpie
+	meteor
+	npm
+	per-directory-history
+	sudo
+	vagrant
+	wp-cli
+	yarn
+)
 
+# lazy-load NVM https://github.com/lukechilds/zsh-nvm#lazy-loading
+export NVM_LAZY_LOAD=true
 # Activate Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='code'
+fi
 
 # Syntax highligting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -83,3 +99,12 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Zsh autocompletions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+eval $(thefuck --alias)
+
+fpath=(/usr/local/share/zsh-completions $fpath)

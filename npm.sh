@@ -14,6 +14,7 @@ packages=(
   tldr
   underscore-cli
   vtop
+  sitespeed.io
 )
 
 yarn global add "${packages[@]}" --prefix /usr/local
