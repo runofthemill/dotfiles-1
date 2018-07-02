@@ -48,7 +48,7 @@ brew 'tree'
 brew 'unar'
 brew 'wget'
 brew 'wifi-password'
-brew 'yarn'
+brew 'yarn --without-node'
 
 # Development
 brew 'dnsmasq'

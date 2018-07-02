@@ -83,6 +83,9 @@ plugins=(
 
 # lazy-load NVM https://github.com/lukechilds/zsh-nvm#lazy-loading
 export NVM_LAZY_LOAD=true
+
+ZSH_DISABLE_COMPFIX=true
+
 # Activate Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -102,8 +105,10 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export CGR_BIN_DIR=$HOME/bin
+
 export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 eval $(thefuck --alias)
 

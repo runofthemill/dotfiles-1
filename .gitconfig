@@ -1,10 +1,10 @@
 [user]
-	name = Jeremy Miller
+	name = jeremy miller
 	email = jeremyemiller@gmail.com
 
 [core]
   editor = subl -n -w
-	excludesfile = /Users/jeremymiller/.gitignore_global
+	excludesfile = /Users/jeremy/.gitignore_global
 
 [alias]
   # Show verbose output about tags, branches or remotes
@@ -51,3 +51,11 @@
 	prompt = false
 [diff]
 	tool = Kaleidoscope
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/jeremy/.stCommitMsg
