@@ -1,6 +1,9 @@
 #!/bin/sh
 
 packages=(
+  bower
+  grunt
+  gulp
   ghwd
   gtop
   historie
@@ -16,6 +19,7 @@ packages=(
   vtop
   sitespeed.io
   committasks
+  gatsby-cli
 )
 
 yarn global add "${packages[@]}" --prefix /usr/local
