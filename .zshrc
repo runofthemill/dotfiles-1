@@ -92,7 +92,6 @@ plugins=(
 	gitfast
 	git-flow
 	httpie
-	meteor
 	npm
 	per-directory-history
 	sudo
