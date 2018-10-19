@@ -3,6 +3,7 @@
 - [ ] sort out `/bin`
 - [ ] move global npm packages to /usr/local
 - [ ] https://github.com/denysdovhan/spaceship-prompt#oh-my-zsh
+- [ ] light version for just dev? e.g. for loaner laptop
 ### Apps not installed via dotfiles:
 
 - Screenie
@@ -42,3 +43,7 @@ Sync via Dropbox:
 - Alfred
 - Dash
 - ST3???
+
+
+### Afterwards
+- Fix zsh-nvm per https://github.com/lukechilds/zsh-nvm/issues/44#issuecomment-391530182
