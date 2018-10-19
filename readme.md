@@ -1,8 +1,8 @@
 # To-Do
- 
+
 - [ ] sort out `/bin`
 - [ ] move global npm packages to /usr/local
-
+- [ ] https://github.com/denysdovhan/spaceship-prompt#oh-my-zsh
 ### Apps not installed via dotfiles:
 
 - Screenie

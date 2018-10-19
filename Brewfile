@@ -44,17 +44,18 @@ brew 'mcrypt'
 brew 'mkcert'
 brew 'nano'
 brew 'nginx'
-# brew 'node' - might need as nvm gets installed at the end?
+brew 'node'
 brew 'p7zip'
 brew 'ssh-copy-id'
 brew 'thefuck'
 brew 'tidy-html5'
+brew 'tldr'
 brew 'trash'
 brew 'tree'
 brew 'unar'
 brew 'wget'
 brew 'wifi-password'
-brew 'yarn --without-node'
+brew 'yarn', args: ["without-node"]
 
 # Development
 brew 'dnsmasq'
