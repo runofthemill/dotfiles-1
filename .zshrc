@@ -4,20 +4,39 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bullet-train"
+# ZSH_THEME="bullet-train"
 
-BULLETTRAIN_PROMPT_ORDER=(
-  git
-  dir
-  time
-  nvm
-  status
+ZSH_THEME="spaceship"
+
+SPACESHIP_PROMPT_ORDER=(
+  time          # Time stampts section
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  node          # Node.js section
+  battery       # Battery level and status
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  vagrant
+  exit_code     # Exit code section
+  line_sep
+  char          # Prompt character
 )
 
-# BULLETTRAIN_STATUS_EXIT_SHOW=true
-BULLETTRAIN_PROMPT_ADD_NEWLINE=false
-BULLETTRAIN_IS_SSH_CLIENT=true
-BULLETTRAIN_DIR_EXTENDED=2
+# SPACESHIP_PROMPT_ADD_NEWLINE="true"
+SPACESHIP_PROMPT_SEPARATE_LINE="true"
+SPACESHIP_GIT_SYMBOL="" # disable git prefix
+SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
+SPACESHIP_NODE_PREFIX=""
+SPACESHIP_NODE_SUFFIX=" "
+SPACESHIP_DIR_TRUNC_REPO="false"
+SPACESHIP_BATTERY_SUFFIX="\uf583"
+SPACESHIP_BATTERY_PREFIX=""
+SPACESHIP_BATTERY_THRESHOLD="30"
+SPACESHIP_VAGRANT_PREFIX="["
+SPACESHIP_VAGRANT_SUFFIX="] "
+SPACESHIP_VAGRANT_DISPLAY_SHORT="true"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
