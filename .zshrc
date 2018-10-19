@@ -58,15 +58,15 @@ SPACESHIP_VAGRANT_DISPLAY_SHORT="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -101,7 +101,7 @@ plugins=(
 )
 
 # lazy-load NVM https://github.com/lukechilds/zsh-nvm#lazy-loading
-export NVM_LAZY_LOAD=true
+# export NVM_LAZY_LOAD=true
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -126,8 +126,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export CGR_BIN_DIR=$HOME/bin
 
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.composer/vendor/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/sbin:$PATH"
 
 eval $(thefuck --alias)
 
