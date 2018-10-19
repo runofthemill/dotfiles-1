@@ -84,6 +84,7 @@ plugins=(
 	zsh-nvm
 	colored-man-pages
 	common-aliases
+	roots-aliases
 	dircycle
 	extract
 	fasd
