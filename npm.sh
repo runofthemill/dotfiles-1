@@ -20,6 +20,7 @@ packages=(
   sitespeed.io
   committasks
   gatsby-cli
+  npm
 )
 
 yarn global add "${packages[@]}" --prefix /usr/local

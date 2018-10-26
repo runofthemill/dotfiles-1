@@ -3,8 +3,8 @@
 	email = jeremyemiller@gmail.com
 
 [core]
-  editor = subl -n -w
-	excludesfile = /Users/jeremy/.gitignore_global
+  editor = code --wait --new-window
+	excludesfile = ~/.gitignore_global
 
 [alias]
   # Show verbose output about tags, branches or remotes
@@ -53,9 +53,9 @@
 	tool = Kaleidoscope
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
 [commit]
-	template = /Users/jeremy/.stCommitMsg
+	template = ~/.stCommitMsg

@@ -23,7 +23,6 @@ brew 'bash'
 brew 'grep'
 
 # Install Binaries
-brew 'ansible'
 brew 'bat'
 brew 'ccat'
 brew 'composer'
@@ -93,10 +92,6 @@ cask 'insomnia'
 cask 'iterm2'
 cask 'jadengeller-helium'
 cask 'karabiner-elements'
-cask 'local-by-flywheel'
-cask 'logitech-gaming-software'
-cask 'logitech-options'
-cask 'logitech-unifying'
 cask 'macdown'
 cask 'muzzle'
 cask 'now'
@@ -117,9 +112,6 @@ cask 'station'
 cask 'transmission'
 cask 'transmit'
 cask 'ui-browser'
-cask 'vagrant'
-cask 'vagrant-manager'
-cask 'virtualbox' # will fail :(
 cask 'visual-studio-code'
 cask 'vlc'
 cask 'zoomus'
@@ -177,3 +169,11 @@ mas 'Giphy Capture', id: 668208984
 mas 'Kaleidoscope', id: 587512244
 mas 'Spark', id: 1176895641
 mas 'Yoink', id: 457622435
+
+# Install these last due to unattended issues
+cask 'virtualbox' # will fail :(
+cask 'local-by-flywheel'
+cask 'logitech-gaming-software'
+cask 'logitech-options'
+cask 'vagrant'
+cask 'vagrant-manager'
