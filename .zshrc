@@ -15,10 +15,10 @@ SPACESHIP_PROMPT_ORDER=(
   host          # Hostname section
   git           # Git section (git_branch + git_status)
   node          # Node.js section
-  battery       # Battery level and status
   vi_mode       # Vi-mode indicator
   jobs          # Background jobs indicator
   vagrant
+  battery       # Battery level and status
   exit_code     # Exit code section
   line_sep
   char          # Prompt character
