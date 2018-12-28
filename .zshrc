@@ -95,7 +95,6 @@ plugins=(
 	npm
 	per-directory-history
 	sudo
-	vagrant
 	wp-cli
 	yarn
 )
