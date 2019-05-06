@@ -19,6 +19,7 @@ SPACESHIP_PROMPT_ORDER=(
   vi_mode       # Vi-mode indicator
   jobs          # Background jobs indicator
   vagrant
+  docker
   battery       # Battery level and status
   exit_code     # Exit code section
   line_sep
