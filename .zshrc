@@ -90,7 +90,7 @@ plugins=(
 	dircycle
 	extract
 	fasd
-	fl
+	forklift
 	gitfast
 	git-flow
 	httpie
