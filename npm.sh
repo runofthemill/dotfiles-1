@@ -23,4 +23,4 @@ packages=(
   npm
 )
 
-yarn global add "${packages[@]}" --prefix /usr/local
+npm install --global "${packages[@]}"
