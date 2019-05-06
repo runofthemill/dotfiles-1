@@ -12,9 +12,18 @@ alias dotfiles="code $HOME/.dotfiles"
 alias proj="cd $HOME/Projects"
 
 # Vagrant
-alias v="vagrant global-status"
+alias v="vagrant global-status --prune"
 alias vup="vagrant up"
 alias vhalt="vagrant halt"
 alias vssh="vagrant ssh"
 alias vreload="vagrant reload"
 alias vrebuild="vagrant destroy --force && vagrant up"
+
+# brew services
+alias list='brew services list'
+alias start='brew services start'
+alias stop='brew services stop'
+
+# Exclude node_modules folders from Spotlight indexing
+# https://github.com/yarnpkg/yarn/issues/6453
+alias fix-spotlight='find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;'
