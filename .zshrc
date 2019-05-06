@@ -6,7 +6,8 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="bullet-train"
 
-ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
+ZSH_THEME=""
 
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stampts section
@@ -106,6 +107,11 @@ ZSH_DISABLE_COMPFIX=true
 
 # Activate Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
+
+# Pure theme
+autoload -U promptinit; promptinit
+
+prompt pure
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
