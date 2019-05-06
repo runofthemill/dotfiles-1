@@ -101,6 +101,7 @@ plugins=(
 	yarn
 )
 
+export NVM_AUTO_USE=true
 # lazy-load NVM https://github.com/lukechilds/zsh-nvm#lazy-loading
 # export NVM_LAZY_LOAD=true
 
