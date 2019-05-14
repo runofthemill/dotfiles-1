@@ -39,6 +39,11 @@ Thumbs.db
 .vscode
 .vagrant/
 
-# Sublime Workspace files #
+# Other files #
 ###########################
 *.sublime-workspace
+wp-migrate-db-pro-compatibility.php
+*alias
+Project Resources
+*.code-workspace
+*.patch

@@ -4,7 +4,8 @@
 
 [core]
   editor = code --wait --new-window
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/jeremy/.gitignore_global
+  pager = diff-so-fancy | less -FXRi
 
 [alias]
   # Show verbose output about tags, branches or remotes
@@ -49,6 +50,7 @@
 	prompt = false
 [mergetool]
 	prompt = false
+  keepBackup = true
 [diff]
 	tool = Kaleidoscope
 [difftool "sourcetree"]
@@ -57,5 +59,3 @@
 [mergetool "sourcetree"]
 	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
-[commit]
-	template = ~/.stCommitMsg
