@@ -137,3 +137,15 @@ export PATH="/usr/local/opt/php@7.2/sbin:/usr/local/opt/php@7.2/bin:$HOME/.compo
 eval $(thefuck --alias)
 
 fpath=(/usr/local/share/zsh-completions $fpath)
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/jeremy/Projects/064_Gryphon/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/jeremy/Projects/064_Gryphon/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/jeremy/Projects/064_Gryphon/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/jeremy/Projects/064_Gryphon/node_modules/tabtab/.completions/sls.zsh
+
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/jeremy/Projects/066_Siren/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/jeremy/Projects/066_Siren/node_modules/tabtab/.completions/slss.zsh
+
