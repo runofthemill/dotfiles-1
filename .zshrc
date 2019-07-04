@@ -1,54 +1,21 @@
+zmodload zsh/zutil
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="bullet-train"
-
-# ZSH_THEME="spaceship"
 ZSH_THEME=""
-
-SPACESHIP_PROMPT_ORDER=(
-  time          # Time stampts section
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  node          # Node.js section
-  vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  vagrant
-  docker
-  battery       # Battery level and status
-  exit_code     # Exit code section
-  line_sep
-  char          # Prompt character
-)
-
-SPACESHIP_PROMPT_SEPARATE_LINE="true"
-SPACESHIP_GIT_SYMBOL="" # disable git prefix
-SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
-SPACESHIP_NODE_PREFIX=""
-SPACESHIP_NODE_SUFFIX=" "
-SPACESHIP_DIR_TRUNC_REPO="true"
-SPACESHIP_BATTERY_SUFFIX="\uf583"
-SPACESHIP_BATTERY_PREFIX=""
-SPACESHIP_BATTERY_THRESHOLD="30"
-SPACESHIP_VAGRANT_PREFIX="["
-SPACESHIP_VAGRANT_SUFFIX="] "
-SPACESHIP_VAGRANT_DISPLAY_SHORT="false"
-SPACESHIP_DOCKER_PREFIX=""
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -63,7 +30,7 @@ SPACESHIP_DOCKER_PREFIX=""
 ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="false"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -101,9 +68,9 @@ plugins=(
 	yarn
 )
 
-export NVM_AUTO_USE=true
 # lazy-load NVM https://github.com/lukechilds/zsh-nvm#lazy-loading
-# export NVM_LAZY_LOAD=true
+export NVM_LAZY_LOAD=true
+export NVM_AUTO_USE=true
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -113,6 +80,7 @@ source $ZSH/oh-my-zsh.sh
 # Pure theme
 autoload -U promptinit; promptinit
 
+zstyle :prompt:pure:git:branch color magenta
 prompt pure
 
 # Preferred editor for local and remote sessions
