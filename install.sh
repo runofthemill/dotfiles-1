@@ -128,9 +128,8 @@ echo "Symlinking some files..."
 # Symlink .gitconfig, .gitignore_global, .mackup.cfg, .warprc, .wp-cli config
 ln -s $DOTFILES_DIR/.gitconfig $HOME/.gitconfig
 ln -s $DOTFILES_DIR/.gitignore_global $HOME/.gitignore_global
-ln -s $DOTFILES_DIR/.mackup.cfg $HOME/.mackup.cfg
-ln -s $DOTFILES_DIR/.warprc $HOME/.warprc
-# ln -s $DOTFILES_DIR/.wp-cli/config.yml $HOME/.wp-cli/config.yml
+ln -s $DOTFILES_DIR/.mackup.cfg $HOME/.mackup.cfg # @TODO: needed???
+ln -s $DOTFILES_DIR/.warprc $HOME/.warprc # @TODO: update w/ .fasd?
 
 echo "Creating ~/Projects/ directory..."
 # Create a Projects directory
