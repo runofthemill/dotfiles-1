@@ -118,7 +118,7 @@ brew bundle
 
 echo "Adding Homebrew Zsh to /private/etc/shells..."
 # Add ZSH to list of shells
-grep "/usr/local/bin/zsh" /private/etc/shells &>/dev/null || sudo bash -c "echo /usr/local/bin/zsh >> /private/etc/shells"
+grep "/usr/local/bin/zsh" /etc/shells &>/dev/null || sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"
 
 echo "Installing global NPM packages..."
 # Install global NPM packages
