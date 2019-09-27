@@ -12,6 +12,7 @@ marzocchi/zsh-notify
 michaelxmcbride/zsh-dircycle
 molovo/tipz
 peterhurford/git-it-on.zsh
+wfxr/forgit
 zdharma/zsh-diff-so-fancy
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
