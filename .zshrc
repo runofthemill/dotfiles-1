@@ -109,3 +109,5 @@ eval $(thefuck --alias)
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/jeremy/Projects/066_Siren/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/jeremy/Projects/066_Siren/node_modules/tabtab/.completions/slss.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

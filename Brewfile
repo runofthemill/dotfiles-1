@@ -6,9 +6,7 @@ tap 'caskroom/drivers'
 
 # Install ZSH
 brew 'zsh'
-brew 'zsh-autosuggestions'
-brew 'zsh-completions'
-brew 'zsh-syntax-highlighting'
+brew 'getantibody/tap/antibody'
 
 # Install GNU core utilities (those that come with macOS are outdated)
 brew 'coreutils'
