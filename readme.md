@@ -48,3 +48,7 @@ Sync via Dropbox:
 
 ### Afterwards
 - Fix zsh-nvm per https://github.com/lukechilds/zsh-nvm/issues/44#issuecomment-391530182
+
+
+### Thanks to
+Largely based off of https://github.com/caarlos0/dotfiles

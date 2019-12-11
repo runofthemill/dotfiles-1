@@ -1,3 +1,6 @@
+#!/bin/sh
+alias reload!='exec "$SHELL" -l'
+
 # Shortcuts
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias reloadcli="source $HOME/.zshrc"

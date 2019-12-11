@@ -1,3 +1,7 @@
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 # Enable autocompletions
 autoload -Uz compinit
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
@@ -94,7 +98,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export CGR_BIN_DIR=$HOME/bin
 
-export PATH="/usr/local/opt/php@7.2/sbin:/usr/local/opt/php@7.2/bin:$HOME/.composer/vendor/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/sbin:$PATH"
+
 eval $(thefuck --alias)
 
 # tabtab source for serverless package

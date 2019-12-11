@@ -1,0 +1,2 @@
+@dev:
+  ssh: vagrant@/srv/www//current
