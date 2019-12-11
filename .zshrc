@@ -65,8 +65,6 @@ if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]]; then
 fi
 
 zmodload zsh/zutil
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
 
 # ZSH options
 ZSH_THEME=""
