@@ -12,7 +12,7 @@ alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 
 # Directories
 alias dotfiles="code $HOME/.dotfiles"
-alias proj="cd $HOME/Projects"
+# alias proj="cd $HOME/Projects"
 
 # Vagrant
 alias v="vagrant global-status --prune"

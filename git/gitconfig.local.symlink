@@ -1,5 +1,5 @@
-[difftool "diffmerge"]
-	cmd = diffmerge $LOCAL $REMOTE
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [alias]
 	co = checkout
 	count = shortlog -sn
@@ -12,30 +12,37 @@
 	commend = commit --amend --no-edit
 	fpr = fetch-pr
 	lt = log --tags --decorate --simplify-by-decoration --oneline
+	# Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+	# Pretty log output
+	hist = log --graph --pretty=format:'%Cred%h%Creset %s%C(yellow)%d%Creset %Cgreen(%cr)%Creset [%an]' --abbrev-commit --date=relative
+	lastchange = log -p --follow -n 1
 [color]
 	diff = auto
 	status = auto
 	branch = auto
-	ui = true
+	ui = auto
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim
+	editor = code --wait --new-window
 	compression = -1
 	autocrlf = input
 	whitespace = trailing-space,space-before-tab
+	pager = diff-so-fancy | less -FXRi
 	precomposeunicode = true
 [apply]
 	whitespace = nowarn
 [help]
 	autocorrect = 1
 [merge]
-	tool = diffmerge
-[mergetool "diffmerge"]
-	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-	trustExitCode = true
-	keepBackup = false
+	tool = Kaleidoscope
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
 [diff]
-	tool = diffmerge
+	tool = Kaleidoscope
 [difftool]
 	prompt = false
 [grep]
@@ -49,3 +56,5 @@
 	template = ~/.dotfiles/git/template.txt
 [log]
 	showSignature = false
+[branch "master"]
+	remote = origin

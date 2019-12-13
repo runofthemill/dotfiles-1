@@ -5,7 +5,6 @@ tap 'caskroom/drivers'
 
 # Install ZSH
 brew 'zsh'
-brew 'getantibody/tap/antibody'
 
 # Install GNU core utilities (those that come with macOS are outdated)
 brew 'coreutils'
@@ -56,10 +55,8 @@ brew 'yarn', args: ["without-node"]
 # Development
 brew 'dnsmasq'
 brew 'php'
-brew 'php-cs-fixer'
 brew 'mariadb'
 brew 'wp-cli'
-brew 'pre-commit'
 
 # Apps
 cask 'adobe-acrobat-reader'
