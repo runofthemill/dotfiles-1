@@ -1,54 +1,53 @@
-# To-Do
+# Mac
 
-- [ ] sort out `/bin`
-- [ ] move global npm packages to /usr/local
-- [ ] light version for just dev? e.g. for loaner laptop
+How I setup a new Mac.
 
-### Apps not installed via dotfiles:
+## 1. Install brew
 
-- Screenie
-- Confide
-- Microsoft Office
+```console
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
-### Fonts not installed via dotfiles:
+## 2. Install deps
 
-- Klavika
-- Operator Mono
+```console
+git clone https://github.com/runofthemill/mac.git ~/.mac
+cd ~/.mac
+brew bundle
+```
 
-## A Fresh macOS Setup
+## 3. Install dotfiles
 
-### Before you re-install
+```console
+git clone https://github.com/runofthemill/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+./script/bootstrap
+zsh
+```
 
-First, go through the checklist below to make sure you didn't forget anything before you wipe your hard drive.
+Not so-sensible defaults:
 
-- Did you commit and push any changes/branches to your git repositories?
-- Did you not forget any important documents in non-iCloud directories?
-- Did you backup all key files? (e.g. `.vault_pass`)
-- Did you save all of your work in apps which aren't synced through iCloud?
-- Did you not forget to export important data from your local database?
-- Did you update [mackup](https://github.com/lra/mackup) to the latest version and ran `mackup backup`?
+```console
+./macos/set-defaults
+```
 
-### Setting up your Mac
+## 4. Setup SSH keys
 
-1. `sudo softwareupdate -i -a`
-2. `xcode-select --install`
-3. `git clone https://github.com/runofthemill/dotfiles-1 ~/.dotfiles`
-4. `cd ~/.dotfiles && source install.sh`
-5. `rm ~/.zshrc`
-6. `ln -s ~/.dotfiles/.zshrc ~/.zshrc`
-7. Restore preferences by running `mackup restore`
-8. Optional: `cd ~/.dotfiles/opt && brew bundle`
+Create a new SSH key or copy the previous one into `~/.ssh`. That should be
+it.
 
-Sync via Dropbox:
-- iTerm 2
-- Alfred
-- Dash
-- ST3???
+Also fix perms:
 
+```console
+$ chmod 0600 ~/.ssh/id_rsa
+```
 
-### Afterwards
-- Fix zsh-nvm per https://github.com/lukechilds/zsh-nvm/issues/44#issuecomment-391530182
+## 5. Reboot
 
+```console
+sudo reboot
+```
 
-### Thanks to
-Largely based off of https://github.com/caarlos0/dotfiles
+## 6. Profit!
+
+:beers:
