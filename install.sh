@@ -150,10 +150,3 @@ if [[ $response1 =~ ^([yY][eE][sS]|[yY])$ ]]; then
     pbcopy < ~/.ssh/id_rsa.pub
     echo "SSH key copied to clipboard"
 fi
-
-echo ""
-echo "Do you want to install Oh My Zsh?  (y/n)"
-read -r response2
-if [[ $response2 =~ ^([yY][eE][sS]|[yY])$ ]]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-fi

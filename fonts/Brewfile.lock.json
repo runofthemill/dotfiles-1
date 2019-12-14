@@ -1,0 +1,120 @@
+{
+  "entries": {
+    "cask": {
+      "font-cascadia": {
+        "version": "1911.21"
+      },
+      "font-droidsansmono-nerd-font-mono": {
+        "version": "2.0.0"
+      },
+      "font-fira-code": {
+        "version": "2"
+      },
+      "font-fira-mono": {
+        "version": "3.206,4.202"
+      },
+      "font-fira-sans": {
+        "version": "4.202"
+      },
+      "font-firacode-nerd-font-mono": {
+        "version": "2.0.0"
+      },
+      "font-firamono-nerd-font-mono": {
+        "version": "2.0.0"
+      },
+      "font-hack": {
+        "version": "3.003"
+      },
+      "font-hack-nerd-font": {
+        "version": "2.0.0"
+      },
+      "font-hack-nerd-font-mono": {
+        "version": "2.0.0"
+      },
+      "font-inconsolata-g-for-powerline": {
+        "version": "latest"
+      },
+      "font-input": {
+        "version": "latest"
+      },
+      "font-lato": {
+        "version": "latest"
+      },
+      "font-lora": {
+        "version": "latest"
+      },
+      "font-merriweather": {
+        "version": "latest"
+      },
+      "font-montserrat": {
+        "version": "7.200"
+      },
+      "font-noto-sans": {
+        "version": "latest"
+      },
+      "font-noto-sans-mono": {
+        "version": "latest"
+      },
+      "font-office-code-pro": {
+        "version": "1.004"
+      },
+      "font-open-sans": {
+        "version": "latest"
+      },
+      "font-open-sans-condensed": {
+        "version": "latest"
+      },
+      "font-pt-sans": {
+        "version": "latest"
+      },
+      "font-raleway": {
+        "version": "latest"
+      },
+      "font-roboto": {
+        "version": "latest"
+      },
+      "font-roboto-condensed": {
+        "version": "latest"
+      },
+      "font-robotomono-nerd-font-mono": {
+        "version": "2.0.0"
+      },
+      "font-source-code-pro": {
+        "version": "2.030R-ro-1.050R-it"
+      },
+      "font-source-code-pro-for-powerline": {
+        "version": "latest"
+      },
+      "font-source-sans-pro": {
+        "version": "2.045R-ro-1.095R-it"
+      },
+      "font-source-serif-pro": {
+        "version": "3.000R"
+      },
+      "font-ubuntu-nerd-font": {
+        "version": "2.0.0"
+      },
+      "font-ubuntu-nerd-font-mono": {
+        "version": "2.0.0"
+      },
+      "font-ubuntumono-nerd-font": {
+        "version": "2.0.0"
+      },
+      "font-ubuntumono-nerd-font-mono": {
+        "version": "2.0.0"
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "catalina": {
+        "HOMEBREW_VERSION": "2.2.1",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "680e941d54f3212161e1d5544fb17938bce9690a",
+        "CLT": "11.3.0.0.1.1574140115",
+        "Xcode": "11.3",
+        "macOS": "10.15.1"
+      }
+    }
+  }
+}

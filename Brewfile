@@ -1,5 +1,5 @@
 # Taps
-tap 'homebrew/cask-cask'
+tap 'homebrew/cask'
 tap 'homebrew/cask-versions'
 tap 'homebrew/cask-drivers'
 tap "mongodb/brew"
@@ -74,9 +74,7 @@ cask 'betterzip'
 cask 'docker'
 cask 'caffeine'
 cask 'cheatsheet'
-cask 'cyberduck'
 cask 'dash'
-cask 'dropbox'
 cask 'endurance'
 cask 'eve'
 cask 'evernote'
@@ -84,8 +82,6 @@ cask 'firefox'
 cask 'flash-player'
 cask 'flux'
 cask 'forklift'
-cask 'franz'
-cask 'gitkraken'
 cask 'google-chrome'
 cask 'hammerspoon'
 cask 'hyper'
@@ -96,12 +92,10 @@ cask 'karabiner-elements'
 cask 'macdown'
 cask 'mongodb-compass-community'
 cask 'muzzle'
-cask 'now'
-cask 'phpstorm'
 cask 'postman'
 cask 'private-internet-access'
 cask 'screenflow'
-cask 'sequel-pro'
+cask 'sequel-pro-nightly'
 cask 'shuttle'
 cask 'silverlight'
 cask 'sketch'
@@ -110,7 +104,7 @@ cask 'slack'
 cask 'spacelauncher'
 cask 'spectacle'
 cask 'spotify'
-cask 'station'
+# cask 'station'
 cask 'there'
 cask 'transmission'
 cask 'transmit'
@@ -130,11 +124,11 @@ cask 'suspicious-package'
 cask 'webpquicklook'
 
 # Install Mac App Store apps
-mas '1Password', id: 443987910
+#mas '1Password', id: 443987910
 mas "Bonsai Time Tracker", id: 1432799040
 mas "Dato", id: 1470584107
 mas "Fantastical", id: 975937182
-mas "Frank DeLoupe", id: 530458789
+#mas "Frank DeLoupe", id: 530458789
 mas "GIPHY CAPTURE", id: 668208984
 mas 'Kaleidoscope', id: 587512244
 mas "Magnet", id: 441258766

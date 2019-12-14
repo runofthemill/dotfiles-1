@@ -52,6 +52,10 @@ done
 
 unset config_files updated_at
 
+# eval $(thefuck --alias)
+
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
 # shellcheck disable=SC1090
