@@ -65,6 +65,7 @@ brew 'terminal-notifier'
 brew 'wp-cli'
 
 # Apps
+cask '1password'
 cask 'adobe-acrobat-reader'
 cask 'alfred'
 cask 'appcleaner'
@@ -124,7 +125,6 @@ cask 'suspicious-package'
 cask 'webpquicklook'
 
 # Install Mac App Store apps
-#mas '1Password', id: 443987910
 mas "Bonsai Time Tracker", id: 1432799040
 mas "Dato", id: 1470584107
 mas "Fantastical", id: 975937182
