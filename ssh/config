@@ -3,5 +3,6 @@ Host *
   ServerAliveInterval 60
   StrictHostKeyChecking no
   UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
 
 Include ~/.ssh/config.local
