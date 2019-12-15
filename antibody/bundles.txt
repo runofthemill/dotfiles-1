@@ -8,6 +8,7 @@ DarrinTisdale/zsh-aliases-exa
 gko/ssh-connect
 hlissner/zsh-autopair
 buonomo/yarn-completion
+mafredri/zsh-async
 marzocchi/zsh-notify
 michaelxmcbride/zsh-dircycle
 molovo/tipz
@@ -18,6 +19,7 @@ zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 
 # these should be at last!
+sindresorhus/pure
 lukechilds/zsh-better-npm-completion
 zdharma/fast-syntax-highlighting
 zsh-users/zsh-history-substring-search
