@@ -84,8 +84,8 @@ else
 fi
 
 if [ $commands[fasd] ]; then # check if fasd is installed
-  fasd_cache="~/.fasd-init-cache"
-  if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+  fasd_cache=~/.fasd-init-cache
+  if [[ "$(command -v fasd)" -nt "$fasd_cache" || ! -s "$fasd_cache" ]]; then
     fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install >| "$fasd_cache"
   fi
   source "$fasd_cache"
