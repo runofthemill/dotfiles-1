@@ -1,5 +1,4 @@
-# install zsh-nvm first so node is available elsewhere
-lukechilds/zsh-nvm
+# zsh-nvm installed separately, first, so node is available elsewhere
 
 # this block is in alphabetic order
 caarlos0/ports kind:path
