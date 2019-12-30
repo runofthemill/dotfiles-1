@@ -23,7 +23,7 @@ alias cdot="cd $HOME/.dotfiles"
 alias croot='cd "$(git rev-parse --show-toplevel)"'
 
 # System
-if (type ggrep); then
+if (type ggrep &>/dev/null); then
   alias grep="ggrep"
 fi
 
