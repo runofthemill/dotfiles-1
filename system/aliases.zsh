@@ -12,7 +12,12 @@ alias lt='exa --tree --level=2'                   # tree
 
 # Navigation
 alias ..="cd .."
-alias -="cd -"
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
+
+alias -- -='cd -'
 alias c="cd $HOME/Code"
 alias cdot="cd $HOME/.dotfiles"
 alias croot='cd "$(git rev-parse --show-toplevel)"'
