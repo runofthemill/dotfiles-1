@@ -1,6 +1,7 @@
 #!/bin/zsh
 export LSCOLORS='exfxcxdxbxegedabagacad'
 export CLICOLOR=true
+export EXA_GRID_ROWS=4
 
 fpath=($DOTFILES/functions $fpath)
 
