@@ -14,12 +14,21 @@ HISTFILE=~/.zsh_history
 HISTSIZE=20000
 SAVEHIST=10000
 
+# directory options
 setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt CHASE_DOTS
+setopt PUSHD_IGNORE_DUPS
+setopt PUSHD_MINUS
+# completion options
 setopt AUTO_LIST
 setopt AUTO_MENU
 setopt ALWAYS_TO_END
+setopt COMPLETE_IN_WORD
+# try to correct spelling of commands + args
+setopt CORRECT
 setopt CORRECT_ALL
-# don't nice background tasks
+# don't nice background tasks http://zsh.sourceforge.net/Doc/Release/Options.html#Job-Control
 setopt NO_BG_NICE
 setopt NO_HUP
 setopt NO_BEEP
@@ -31,9 +40,8 @@ setopt LOCAL_TRAPS
 setopt SHARE_HISTORY
 # add timestamps to history
 setopt EXTENDED_HISTORY
+# parameter expansion, command substitution and arithmetic expansion are performed in prompts
 setopt PROMPT_SUBST
-setopt CORRECT
-setopt COMPLETE_IN_WORD
 # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_DUPS
