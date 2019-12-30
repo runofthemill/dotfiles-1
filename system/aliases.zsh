@@ -23,22 +23,31 @@ alias cdot="cd $HOME/.dotfiles"
 alias croot='cd "$(git rev-parse --show-toplevel)"'
 
 # System
-if (type ggrep &>/dev/null); then
-  alias grep="ggrep"
-fi
-
-alias grep="grep --color=auto"
-# alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+alias cp='cp -i'
 alias duf="du -sh * | sort -hr"
 alias dud='du -d 1 -h | sort -hr'
 alias reload!='exec "$SHELL" -l'
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias watch='watch ' # quick hack to make watch work with aliases
+alias mv='mv -i'
+
+if (type trash &>/dev/null); then
+  alias rm="trash"
+else
+  alias rm="rm -i"
+fi
 
 # Dotfiles
 alias dot="$VEDITOR $HOME/.dotfiles"
 alias dotfiles="$VEDITOR $HOME/.dotfiles"
 alias zshrc="$VEDITOR ~/.zshrc"
+
+# grep
+if (type ggrep &>/dev/null); then
+  alias grep="ggrep"
+fi
+alias grep="grep --color=auto"
+# alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
 # Vagrant
 alias vg="vagrant global-status --prune"
@@ -66,6 +75,13 @@ alias fix-spotlight='find . -type d -name "node_modules" -exec touch "{}/.metada
 alias weather="curl -4 http://wttr.in"
 alias shrug="echo 'Â¯\_(ãƒ„)_/Â¯' | pbcopy"
 
+#list whats inside packed file
+alias -s zip="unzip -l"
+alias -s rar="unrar l"
+alias -s tar="tar tf"
+alias -s tar.gz="echo "
+alias -s ace="unace l"
+
 # alias t='tail -f'
 
 # # Command line head / tail shortcuts
@@ -89,41 +105,6 @@ alias shrug="echo 'Â¯\_(ãƒ„)_/Â¯' | pbcopy"
 # alias p='ps -f'
 # alias sortnr='sort -n -r'
 # alias unexport='unset'
-
-# alias rm='rm -i'
-# alias cp='cp -i'
-# alias mv='mv -i'
-
-# # open browser on urls
-# if [[ -n "$BROWSER" ]]; then
-#   _browser_fts=(htm html de org net com at cx nl se dk)
-#   for ft in $_browser_fts; do alias -s $ft=$BROWSER; done
-# fi
-
-# _editor_fts=(cpp cxx cc c hh h inl asc txt TXT tex)
-# for ft in $_editor_fts; do alias -s $ft=$EDITOR; done
-
-# if [[ -n "$XIVIEWER" ]]; then
-#   _image_fts=(jpg jpeg png gif mng tiff tif xpm)
-#   for ft in $_image_fts; do alias -s $ft=$XIVIEWER; done
-# fi
-
-# _media_fts=(ape avi flv m4a mkv mov mp3 mpeg mpg ogg ogm rm wav webm)
-# for ft in $_media_fts; do alias -s $ft=mplayer; done
-
-# #read documents
-# alias -s pdf=acroread
-# alias -s ps=gv
-# alias -s dvi=xdvi
-# alias -s chm=xchm
-# alias -s djvu=djview
-
-# #list whats inside packed file
-# alias -s zip="unzip -l"
-# alias -s rar="unrar l"
-# alias -s tar="tar tf"
-# alias -s tar.gz="echo "
-# alias -s ace="unace l"
 
 root() {
   local root
