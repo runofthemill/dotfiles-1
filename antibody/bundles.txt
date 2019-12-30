@@ -3,7 +3,6 @@
 # this block is in alphabetic order
 caarlos0/ports kind:path
 caarlos0/zsh-mkc
-DarrinTisdale/zsh-aliases-exa
 gko/ssh-connect
 hlissner/zsh-autopair
 buonomo/yarn-completion
