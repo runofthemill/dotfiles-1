@@ -104,3 +104,5 @@ if [ $commands[fasd] ]; then # check if fasd is installed
   alias o='a -e open'
   alias j='zz'
 fi
+
+export TIPZ_TEXT='💡'
