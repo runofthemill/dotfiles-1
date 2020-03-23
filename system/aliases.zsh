@@ -122,3 +122,5 @@ root() {
 alias theme='cd $(root)/site/web/app/themes/$(wp @dev option get stylesheet | cut -d/ -f1)'
 alias trellis='cd $(root)/trellis'
 alias site='cd $(root)/site'
+
+alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"' # https://docs.docker.com/engine/reference/commandline/ps/#formatting
