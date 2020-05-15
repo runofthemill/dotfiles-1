@@ -20,7 +20,6 @@ brew 'bash'
 brew 'grep'
 
 # Install Binaries
-brew 'awscli'
 brew 'bat'
 brew 'ccat'
 brew 'composer'
@@ -71,7 +70,6 @@ cask 'alfred'
 cask 'appcleaner'
 cask 'bartender'
 cask 'beardedspice'
-cask 'betterzip'
 cask 'docker'
 cask 'caffeine'
 cask 'cheatsheet'
@@ -105,10 +103,8 @@ cask 'slack'
 cask 'spacelauncher'
 cask 'spectacle'
 cask 'spotify'
-# cask 'station'
 cask 'there'
 cask 'transmission'
-cask 'transmit'
 cask 'ui-browser'
 cask 'visual-studio-code'
 cask 'vlc'
@@ -125,7 +121,6 @@ cask 'suspicious-package'
 cask 'webpquicklook'
 
 # Install Mac App Store apps
-mas "Bonsai Time Tracker", id: 1432799040
 mas "Dato", id: 1470584107
 mas "Fantastical", id: 975937182
 #mas "Frank DeLoupe", id: 530458789

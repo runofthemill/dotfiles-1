@@ -1,9 +1,0 @@
-/Users/jeremy/.nvm/versions/node/v9.9.0/lib
-├── bower@1.8.4
-├── committasks@1.0.1
-├── gatsby-cli@2.4.3
-├── grunt@1.0.2
-├── gulp@3.9.1
-├── npm@6.4.1
-└── sitespeed.io@6.5.4
-
