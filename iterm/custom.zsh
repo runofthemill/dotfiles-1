@@ -5,8 +5,14 @@ function iterm2_print_user_vars() {
 }
 
 function set_node_version() {
-  if (type _zsh_nvm_nvm &>/dev/null); then
-    echo $(nvm current)
+  if command -v nvm &>/dev/null; then
+    if (type _zsh_nvm_nvm &>/dev/null); then
+      echo $(nvm current)
+    else
+      echo "unset"
+    fi
+  elif command -v node &>/dev/null; then
+    echo "$(node -v) (system)"
   else
     echo "unset"
   fi
@@ -14,7 +20,7 @@ function set_node_version() {
 
 # if nvm isn't loaded, and user switches into a dir with .nvmrc, load nvm
 function chpwd() {
-  if ! (type _zsh_nvm_nvm &>/dev/null); then
+  if command -v nvm &>/dev/null && ! (type _zsh_nvm_nvm &>/dev/null); then
     if [[ -e ".nvmrc" ]]; then
       nvm use
     fi
