@@ -59,6 +59,7 @@ brew 'ansible'
 brew 'dnsmasq'
 brew 'php'
 brew 'pre-commit'
+brew 'pyenv' # rbenv/tap/openssl@1.0 needed for older python versions
 brew 'mariadb'
 brew 'terminal-notifier'
 brew 'wp-cli'
