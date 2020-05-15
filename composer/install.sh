@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if command -v composer >/dev/null 2>&1; then
+if command -v composer &>/dev/null; then
 	composer global require laravel/valet
 else
 	echo "composer not found"

@@ -16,12 +16,12 @@ fi
 set +e
 
 disable_agent() {
-	mv "$1" "$1_DISABLED" >/dev/null 2>&1 ||
-		sudo mv "$1" "$1_DISABLED" >/dev/null 2>&1
+	mv "$1" "$1_DISABLED" &>/dev/null ||
+		sudo mv "$1" "$1_DISABLED" &>/dev/null
 }
 
 unload_agent() {
-	launchctl unload -w "$1" >/dev/null 2>&1
+	launchctl unload -w "$1" &>/dev/null
 }
 
 test -z "$TRAVIS_JOB_ID" && sudo -v
@@ -263,7 +263,7 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 ###############################################################################
 # SSD-specific tweaks                                                         #
 ###############################################################################
-if [ ! -z "$TRAVIS_JOB_ID" ] && diskutil info disk0 | grep SSD >/dev/null 2>&1; then
+if [ ! -z "$TRAVIS_JOB_ID" ] && diskutil info disk0 | grep SSD &>/dev/null; then
 	echo "  › Disable local backups"
 	# https://classicyuppie.com/what-crap-is-this-os-xs-mobilebackups/
 	sudo tmutil disablelocal
@@ -303,6 +303,6 @@ echo "› Kill related apps"
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 	"Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
 	"Terminal" "Transmission" "Photos"; do
-	killall "$app" >/dev/null 2>&1
+	killall "$app" &>/dev/null
 done
 set -e

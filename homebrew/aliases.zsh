@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if command -v brew >/dev/null 2>&1; then
+if command -v brew &>/dev/null; then
 	brew() {
 		case "$1" in
 		cleanup)
