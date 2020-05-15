@@ -1,4 +1,5 @@
 #!/bin/sh
+alias letmerun='xattr -d -r com.apple.quarantine'
 # exa
 alias l='exa'
 alias ll='exa -1'
