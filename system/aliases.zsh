@@ -50,6 +50,7 @@ alias grep="grep --color=auto"
 # alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
 # Vagrant
+alias v="vagrant"
 alias vg="vagrant global-status --prune"
 alias vup="vagrant up"
 alias vhalt="vagrant halt"
