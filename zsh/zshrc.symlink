@@ -21,6 +21,9 @@ for file in ${(M)config_files:#*/path.zsh}; do
   source "$file"
 done
 
+# load nocorrect aliases early
+source $DOTFILES/zsh/nocorrect.zsh
+
 # lazy-load NVM https://github.com/lukechilds/zsh-nvm#lazy-loading - does this have to be set before antibody plugins loaded?
 export NVM_LAZY_LOAD=true
 export NVM_AUTO_USE=true
@@ -28,8 +31,8 @@ export NVM_AUTO_USE=true
 # load zsh-nvm antibody plugin
 source ~/.zsh_nvm_plugin.sh
 
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}; do
+# load everything but the path, completion, and nocorrect files
+for file in ${${${config_files:#*/path.zsh}:#*/completion.zsh}:#*/nocorrect.zsh}; do
   source "$file"
 done
 
