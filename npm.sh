@@ -21,6 +21,7 @@ packages=(
   committasks
   gatsby-cli
   npm
+  ntl
 )
 
 npm install --global "${packages[@]}"

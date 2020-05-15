@@ -105,3 +105,5 @@ if [ $commands[fasd] ]; then # check if fasd is installed
 fi
 
 export TIPZ_TEXT='💡'
+
+export NTL_RUNNER=yarn
