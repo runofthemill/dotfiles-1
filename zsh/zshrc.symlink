@@ -11,6 +11,7 @@ export PROJECTS="$HOME/Code"
 # your default editor
 export EDITOR='nano'
 export VEDITOR='code'
+export VISUAL='code'
 
 # all of our zsh files
 typeset -U config_files
