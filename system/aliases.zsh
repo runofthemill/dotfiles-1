@@ -126,3 +126,19 @@ alias trellis='cd $(root)/trellis'
 alias site='cd $(root)/site'
 
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"' # https://docs.docker.com/engine/reference/commandline/ps/#formatting
+declare -A brewPhpInstallations
+brewPhpInstallations=($(brew ls --versions | grep -Po 'php\S*\b\s\d\.\d' | uniq | sort))
+
+for brewName version in ${(kv)brewPhpInstallations}; do
+    value="{"
+
+    for otherPhpInstalls in ${(k)brewPhpInstallations}; do
+        if [ "${otherPhpInstalls}" != "${brewName}" ]; then
+            value="${value} brew unlink ${otherPhpInstalls};"
+        fi
+    done
+
+    value="${value} brew link ${brewName} --force --overwrite; } &> /dev/null && php -v"
+
+    alias "${version}"="${value}"
+done
