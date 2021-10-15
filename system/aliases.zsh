@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 alias letmerun='xattr -d -r com.apple.quarantine'
 # exa
 alias l='exa'
@@ -32,7 +32,7 @@ alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias watch='watch ' # quick hack to make watch work with aliases
 alias mv='mv -i'
 
-if (type trash &>/dev/null); then
+if command -v trash &>/dev/null; then
   alias rm="trash"
 else
   alias rm="rm -i"
@@ -44,10 +44,10 @@ alias dotfiles="$VEDITOR $HOME/.dotfiles"
 alias zshrc="$VEDITOR ~/.zshrc"
 
 # grep
-if (type ggrep &>/dev/null); then
-  alias grep="ggrep"
-fi
 alias grep="grep --color=auto"
+if command -v ggrep &>/dev/null; then
+  alias -g grep="ggrep --color=auto"
+fi
 # alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
 # Vagrant

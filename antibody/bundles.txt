@@ -8,6 +8,7 @@ hlissner/zsh-autopair
 buonomo/yarn-completion
 mafredri/zsh-async
 marzocchi/zsh-notify
+mattberther/zsh-pyenv
 michaelxmcbride/zsh-dircycle
 molovo/tipz
 peterhurford/git-it-on.zsh

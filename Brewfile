@@ -110,7 +110,6 @@ cask 'transmission'
 cask 'ui-browser'
 cask 'visual-studio-code'
 cask 'vlc'
-cask 'zoomus'
 
 # Quicklook
 cask 'qlcolorcode'
