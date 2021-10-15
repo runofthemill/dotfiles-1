@@ -125,7 +125,13 @@ alias theme='cd $(root)/site/web/app/themes/$(wp @dev option get stylesheet | cu
 alias trellis='cd $(root)/trellis'
 alias site='cd $(root)/site'
 
+# Docker
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"' # https://docs.docker.com/engine/reference/commandline/ps/#formatting
+alias dpsp='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"' # https://docs.docker.com/engine/reference/commandline/ps/#formatting
+alias dc='docker compose'
+
+alias sail='./vendor/bin/sail'
+
 declare -A brewPhpInstallations
 brewPhpInstallations=($(brew ls --versions | grep -Po 'php\S*\b\s\d\.\d' | uniq | sort))
 
@@ -142,3 +148,20 @@ for brewName version in ${(kv)brewPhpInstallations}; do
 
     alias "${version}"="${value}"
 done
+
+ssm()
+{
+  REGION=${2:-us-west-1}
+  aws ssm start-session --target "$1" --region $REGION
+}
+
+# Describes AWS instances
+describe-instances(){
+  # args=${@:-"--region us-west-1"}
+
+  aws ec2 describe-instances "$@" \
+      --filters Name=tag-key,Values=Name \
+      --query 'Reservations[*].Instances[*].{IP:PrivateIpAddress,Instance:InstanceId,AZ:Placement.AvailabilityZone,Name:Tags[?Key==`Name`]|[0].Value}' \
+      --output table
+}
+alias di="describe-instances"
