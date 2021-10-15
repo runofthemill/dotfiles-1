@@ -57,3 +57,5 @@
 	showSignature = false
 [branch "master"]
 	remote = origin
+[branch "main"]
+	remote = origin
