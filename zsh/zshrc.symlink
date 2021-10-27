@@ -25,12 +25,22 @@ done
 # load nocorrect aliases early
 source $DOTFILES/zsh/nocorrect.zsh
 
-# lazy-load NVM https://github.com/lukechilds/zsh-nvm#lazy-loading - does this have to be set before antibody plugins loaded?
-export NVM_LAZY_LOAD=true
-export NVM_AUTO_USE=true
+eval "$(fnm env)"
+FNM_USING_LOCAL_VERSION=0
 
-# load zsh-nvm antibody plugin
-source ~/.zsh_nvm_plugin.sh
+autoload -U add-zsh-hook
+_fnm_autoload_hook() {
+	if [[ -f .nvmrc && -r .nvmrc || -f .node-version && -r .node-version ]]; then
+		FNM_USING_LOCAL_VERSION=1
+		fnm use --install-if-missing
+	elif [ $FNM_USING_LOCAL_VERSION -eq 1 ]; then
+		FNM_USING_LOCAL_VERSION=0
+		fnm use default
+	fi
+}
+
+add-zsh-hook chpwd _fnm_autoload_hook &&
+	_fnm_autoload_hook
 
 # load everything but the path, completion, and nocorrect files
 for file in ${${${config_files:#*/path.zsh}:#*/completion.zsh}:#*/nocorrect.zsh}; do

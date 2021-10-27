@@ -1,5 +1,3 @@
-# zsh-nvm installed separately, first, so node is available elsewhere
-
 # this block is in alphabetic order
 caarlos0/ports kind:path
 caarlos0/zsh-mkc
