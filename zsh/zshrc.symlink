@@ -12,7 +12,7 @@ export PROJECTS="$HOME/Code"
 export EDITOR='nano'
 export VEDITOR='code'
 export VISUAL='code'
-
+export STARSHIP_CONFIG=~/.dotfiles/starship.toml
 # all of our zsh files
 typeset -U config_files
 config_files=($DOTFILES/*/*.zsh)
@@ -24,6 +24,8 @@ done
 
 # load nocorrect aliases early
 source $DOTFILES/zsh/nocorrect.zsh
+
+eval "$(pyenv init -)"
 
 eval "$(fnm env)"
 FNM_USING_LOCAL_VERSION=0
@@ -44,7 +46,7 @@ add-zsh-hook chpwd _fnm_autoload_hook &&
 
 # load everything but the path, completion, and nocorrect files
 for file in ${${${config_files:#*/path.zsh}:#*/completion.zsh}:#*/nocorrect.zsh}; do
-  source "$file"
+  source $file
 done
 
 # set up homebrew's zsh autocomplete; must be before compinit
@@ -52,7 +54,7 @@ if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-autoload -Uz compinit
+autoload -Uz async compinit
 for dump in ~/.zcompdump(N.mh+24); do
   compinit
 done
@@ -77,14 +79,15 @@ unset config_files updated_at
 # shellcheck disable=SC1090
 [ -f ~/.localrc ] && . ~/.localrc
 
-# zprof
 
 # For dockerized minotaur/siren
-export SSH_KEY=$(cat ~/.ssh/id_rsa)
-export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+# export SSH_KEY=$(cat ~/.ssh/id_rsa)
+# export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
 
 # Artifactory config for @nyt, @nyt-cms & @newsdev npm registry. Configured: 2021-08-02 10:46:10
 export ARTIFACTORY_USER="211667"
 export ARTIFACTORY_API_KEY="QUtDcDVmVVBEVHVXRGJIU1BqdGFZZFZ0VXpmY0Z4dFJhMXBlaExvcENWWFEyN0F1S1hLMnlWa1JNRHZaVkJ4Y3hZaGFLY1RiWQ=="
 export ARTIFACTORY_EMAIL="jeremy.miller@wirecutter.com"
 export ARTIFACTORY_AUTH=$(echo -n "$ARTIFACTORY_USER:$(echo $ARTIFACTORY_API_KEY | base64 -D)" | base64)
+eval "$(starship init zsh)"
+# zprof

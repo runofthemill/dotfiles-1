@@ -132,22 +132,25 @@ alias dc='docker compose'
 
 alias sail='./vendor/bin/sail'
 
-declare -A brewPhpInstallations
-brewPhpInstallations=($(brew ls --versions | grep -Po 'php\S*\b\s\d\.\d' | uniq | sort))
 
-for brewName version in ${(kv)brewPhpInstallations}; do
-    value="{"
+### this slows down startup time significantly. doesn't seem like zhs-async can be
+### used to set aliases w/ a associated array ¯\_(ツ)_/¯
+# declare -A brewPhpInstallations
+# brewPhpInstallations=($(brew ls --versions | grep -Po 'php\S*\b\s\d\.\d' | uniq | sort))
 
-    for otherPhpInstalls in ${(k)brewPhpInstallations}; do
-        if [ "${otherPhpInstalls}" != "${brewName}" ]; then
-            value="${value} brew unlink ${otherPhpInstalls};"
-        fi
-    done
+# for brewName version in ${(kv)brewPhpInstallations}; do
+#     value="{"
 
-    value="${value} brew link ${brewName} --force --overwrite; } &> /dev/null && php -v"
+#     for otherPhpInstalls in ${(k)brewPhpInstallations}; do
+#         if [ "${otherPhpInstalls}" != "${brewName}" ]; then
+#             value="${value} brew unlink ${otherPhpInstalls};"
+#         fi
+#     done
 
-    alias "${version}"="${value}"
-done
+#     value="${value} brew link ${brewName} --force --overwrite; } &> /dev/null && php -v"
+
+#     alias "${version}"="${value}"
+# done
 
 ssm()
 {

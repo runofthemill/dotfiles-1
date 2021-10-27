@@ -1,12 +1,9 @@
 # this block is in alphabetic order
 caarlos0/ports kind:path
-caarlos0/zsh-mkc
 gko/ssh-connect
 hlissner/zsh-autopair
 buonomo/yarn-completion
-mafredri/zsh-async
 marzocchi/zsh-notify
-mattberther/zsh-pyenv
 michaelxmcbride/zsh-dircycle
 molovo/tipz
 peterhurford/git-it-on.zsh
@@ -16,7 +13,6 @@ zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 
 # these should be at last!
-sindresorhus/pure
 lukechilds/zsh-better-npm-completion
 zdharma/fast-syntax-highlighting
-zsh-users/zsh-history-substring-search
+tymm/zsh-directory-history
