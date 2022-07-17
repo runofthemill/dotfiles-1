@@ -1,2 +1,0 @@
-# install zsh-nvm first so node is available elsewhere
-runofthemill/zsh-nvm branch:patch-1

@@ -3,8 +3,6 @@ export LSCOLORS='exfxcxdxbxegedabagacad'
 export CLICOLOR=true
 export EXA_GRID_ROWS=4
 
-fpath=($DOTFILES/functions $fpath)
-
 #autoload -U "$DOTFILES"/functions/*(:t)
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
@@ -15,7 +13,7 @@ HISTSIZE=20000
 SAVEHIST=10000
 
 # directory options
-setopt AUTO_CD
+# setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt CHASE_DOTS
 setopt PUSHD_IGNORE_DUPS

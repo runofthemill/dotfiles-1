@@ -1,0 +1,11 @@
+# this block is in alphabetic order
+caarlos0/ports kind:path
+gko/ssh-connect
+hlissner/zsh-autopair
+marlonrichert/zsh-autocomplete
+marzocchi/zsh-notify
+michaelxmcbride/zsh-dircycle
+molovo/tipz
+peterhurford/git-it-on.zsh
+romkatv/powerlevel10k
+# mattberther/zsh-pyenv

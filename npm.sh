@@ -21,7 +21,7 @@ packages=(
   committasks
   gatsby-cli
   npm
-  ntl
+  ntl # may need alias ntl='nocorrect ntl'
 )
 
 npm install --global "${packages[@]}"

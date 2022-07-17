@@ -1,14 +1,16 @@
 #!/bin/sh
 
-# Probably can/should delete
-DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
 echo "Setting up your Mac..."
 
-echo "Installing Homebrew..."
+# Check for antidote install if we don't have it
+[[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
+
 # Check for Homebrew and install if we don't have it
-if ! command -v brew &>/dev/null; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+if test ! $(which brew); then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 echo "Updating Homebrew..."
@@ -16,41 +18,17 @@ echo "Updating Homebrew..."
 brew update
 
 echo "Tapping homebrew/bundle and installing from Brewfile..."
-# Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
 brew bundle
 
-echo "Adding Homebrew Zsh to /private/etc/shells..."
-# Add ZSH to list of shells
-grep "/usr/local/bin/zsh" /etc/shells &>/dev/null || sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"
+echo "Adding Homebrew Zsh to /etc/shells..."
+grep "/opt/homebrew/bin/zsh" /etc/shells &>/dev/null || sudo bash -c "echo /opt/homebrew/bin/zsh >> /etc/shells"
+echo "Setting default shell to /opt/homebrew/bin/zsh"
+grep "/opt/homebrew/bin/zsh" /etc/shells &>/dev/null && chsh -s /opt/homebrew/bin/zsh
 
-echo "Installing global NPM packages..."
-# Install global NPM packages
-. npm.sh
-
-echo "Symlinking some files..."
-# Symlink .gitconfig, .gitignore_global, .mackup.cfg, .warprc, .wp-cli config
-ln -s $DOTFILES_DIR/.gitconfig $HOME/.gitconfig
-ln -s $DOTFILES_DIR/.gitignore_global $HOME/.gitignore_global
-ln -s $DOTFILES_DIR/.mackup.cfg $HOME/.mackup.cfg # @TODO: needed???
-ln -s $DOTFILES_DIR/.warprc $HOME/.warprc # @TODO: update w/ .fasd?
-
-echo "Creating ~/Projects/ directory..."
-# Create a Projects directory
-mkdir $HOME/Projects
 
 # Set macOS preferences
 # -# We will run this last because this will reload the shell
 # -source .macos
 
-echo ""
-echo "Do you want to create an SSH key?  (y/n)"
-read -r response1
-if [[ $response1 =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    echo "Enter the email address for the SSH key:"
-    read email
-    ssh-keygen -t rsa -b 4096 -C "$email"
-    #copy ssh key to clipboard
-    pbcopy < ~/.ssh/id_rsa.pub
-    echo "SSH key copied to clipboard"
-fi
+

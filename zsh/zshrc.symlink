@@ -1,12 +1,27 @@
-#!/bin/zsh
 # uncomment this and the last line for zprof info
 # zmodload zsh/zprof
 
-# shortcut to this dotfiles path is $DOTFILES
 export DOTFILES="$HOME/.dotfiles"
 
-# your project folder that we can `c [tab]` to
-export PROJECTS="$HOME/Code"
+antidote_home=$DOTFILES/antidote
+zhome=${ZDOTDIR:-$HOME}
+
+if [[ ! $zhome/.zsh_plugins.zsh -nt $antidote_home/zsh_plugins.txt ]]; then
+  [[ -e $zhome/.antidote ]] \
+    || git clone --depth=1 https://github.com/mattmc3/antidote.git $zhome/.antidote
+  [[ -e $antidote_home/zsh_plugins.txt ]] || touch $antidote_home/zsh_plugins.txt
+  (
+    source $zhome/.antidote/antidote.zsh
+    antidote bundle <$antidote_home/zsh_plugins.txt >$zhome/.zsh_plugins.zsh
+  )
+fi
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # your default editor
 export EDITOR='nano'
@@ -17,30 +32,11 @@ export VISUAL='code'
 typeset -U config_files
 config_files=($DOTFILES/*/*.zsh)
 
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}; do
+# load everything but the completion, nocorrect
+for file in ${config_files:#*/completion.zsh}; do
+# echo "$file"
   source "$file"
 done
-
-# load nocorrect aliases early
-source $DOTFILES/zsh/nocorrect.zsh
-
-# lazy-load NVM https://github.com/lukechilds/zsh-nvm#lazy-loading - does this have to be set before antibody plugins loaded?
-export NVM_LAZY_LOAD=true
-export NVM_AUTO_USE=true
-
-# load zsh-nvm antibody plugin
-source ~/.zsh_nvm_plugin.sh
-
-# load everything but the path, completion, and nocorrect files
-for file in ${${${config_files:#*/path.zsh}:#*/completion.zsh}:#*/nocorrect.zsh}; do
-  source "$file"
-done
-
-# set up homebrew's zsh autocomplete; must be before compinit
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
 
 autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
@@ -48,33 +44,20 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
+unset config_files updated_at
+
+eval $(thefuck --alias)
+
+# [ -f ~/.localrc ] && . ~/.localrc
+
+[[ ! -f ~/.zsh_plugins.zsh ]] || source ~/.zsh_plugins.zsh
+[[ ! -f "${HOME}/.iterm2_shell_integration.zsh" ]] || source "${HOME}/.iterm2_shell_integration.zsh"
+
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}; do
   source "$file"
 done
 
-# load other antibody plugins
-source ~/.zsh_plugins.sh
-
-unset config_files updated_at
-
-# eval $(thefuck --alias)
-
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-# shellcheck disable=SC1090
-[ -f ~/.localrc ] && . ~/.localrc
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 
 # zprof
-
-# For dockerized minotaur/siren
-export SSH_KEY=$(cat ~/.ssh/id_rsa)
-export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
-
-# Artifactory config for @nyt, @nyt-cms & @newsdev npm registry. Configured: 2021-08-02 10:46:10
-export ARTIFACTORY_USER="211667"
-export ARTIFACTORY_API_KEY="QUtDcDVmVVBEVHVXRGJIU1BqdGFZZFZ0VXpmY0Z4dFJhMXBlaExvcENWWFEyN0F1S1hLMnlWa1JNRHZaVkJ4Y3hZaGFLY1RiWQ=="
-export ARTIFACTORY_EMAIL="jeremy.miller@wirecutter.com"
-export ARTIFACTORY_AUTH=$(echo -n "$ARTIFACTORY_USER:$(echo $ARTIFACTORY_API_KEY | base64 -D)" | base64)
