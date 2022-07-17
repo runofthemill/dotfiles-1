@@ -3,6 +3,8 @@ export LSCOLORS='exfxcxdxbxegedabagacad'
 export CLICOLOR=true
 export EXA_GRID_ROWS=4
 
+HOMEBREW_BUNDLE_NO_LOCK=true
+
 #autoload -U "$DOTFILES"/functions/*(:t)
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search

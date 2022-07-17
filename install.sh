@@ -19,7 +19,7 @@ brew update
 
 echo "Tapping homebrew/bundle and installing from Brewfile..."
 brew tap homebrew/bundle
-brew bundle
+brew bundle --no-lock
 
 echo "Adding Homebrew Zsh to /etc/shells..."
 grep "/opt/homebrew/bin/zsh" /etc/shells &>/dev/null || sudo bash -c "echo /opt/homebrew/bin/zsh >> /etc/shells"
