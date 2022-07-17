@@ -3,6 +3,8 @@
 
 export DOTFILES="$HOME/.dotfiles"
 
+[[ ! -f "${HOME}/.iterm2_shell_integration.zsh" ]] || source "${HOME}/.iterm2_shell_integration.zsh"
+
 antidote_home=$DOTFILES/antidote
 zhome=${ZDOTDIR:-$HOME}
 
@@ -38,6 +40,7 @@ for file in ${config_files:#*/completion.zsh}; do
   source "$file"
 done
 
+autoload -Uz $zhome/.antidote/functions/antidote
 autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
   compinit
@@ -46,12 +49,12 @@ compinit -C
 
 unset config_files updated_at
 
+eval "$(fnm env --use-on-cd)"
 eval $(thefuck --alias)
 
 # [ -f ~/.localrc ] && . ~/.localrc
 
 [[ ! -f ~/.zsh_plugins.zsh ]] || source ~/.zsh_plugins.zsh
-[[ ! -f "${HOME}/.iterm2_shell_integration.zsh" ]] || source "${HOME}/.iterm2_shell_integration.zsh"
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}; do
