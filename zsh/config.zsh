@@ -1,55 +1,58 @@
-#!/bin/zsh
-export LSCOLORS='exfxcxdxbxegedabagacad'
-export CLICOLOR=true
-export EXA_GRID_ROWS=4
+### Exa settings
+LSCOLORS='exfxcxdxbxegedabagacad'
+CLICOLOR=true
+EXA_GRID_ROWS=4
 
+### Homebrew Settings
 HOMEBREW_BUNDLE_NO_LOCK=true
 
-#autoload -U "$DOTFILES"/functions/*(:t)
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-autoload -U edit-command-line
+### Changing Directories
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt CHASE_DOTS
+setopt PUSHD_MINUS
 
+### Completion
+setopt ALWAYS_TO_END
+setopt AUTO_MENU
+
+### Input/Output
+setopt CORRECT # try to correct spelling of commands
+setopt CORRECT_ALL # try to correct spelling of args
+setopt RM_STAR_SILENT # dont ask for confirmation in rm globs*
+
+### Job Control
+setopt NO_HUP
+
+### Zle
+setopt NO_BEEP
+
+### Scripts and Functions
+setopt LOCAL_OPTIONS # allow functions to have local options
+setopt LOCAL_TRAPS # allow functions to have local traps
+
+### History
 HISTFILE=~/.zsh_history
 HISTSIZE=20000
 SAVEHIST=10000
 
-# directory options
-# setopt AUTO_CD
-setopt AUTO_PUSHD
-setopt CHASE_DOTS
-setopt PUSHD_IGNORE_DUPS
-setopt PUSHD_MINUS
-# completion options
-setopt AUTO_LIST
-setopt AUTO_MENU
-setopt ALWAYS_TO_END
-setopt COMPLETE_IN_WORD
-# try to correct spelling of commands + args
-setopt CORRECT
-setopt CORRECT_ALL
-# don't nice background tasks http://zsh.sourceforge.net/Doc/Release/Options.html#Job-Control
-setopt NO_BG_NICE
-setopt NO_HUP
-setopt NO_BEEP
-# allow functions to have local options
-setopt LOCAL_OPTIONS
-# allow functions to have local traps
-setopt LOCAL_TRAPS
-# share history between sessions ???
-setopt SHARE_HISTORY
-# add timestamps to history
 setopt EXTENDED_HISTORY
-# parameter expansion, command substitution and arithmetic expansion are performed in prompts
-setopt PROMPT_SUBST
-# don't record dupes in history
-setopt HIST_REDUCE_BLANKS
+setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
+setopt HIST_LEX_WORDS
+setopt HIST_NO_FUNCTIONS
+setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
-setopt HIST_EXPIRE_DUPS_FIRST
-# dont ask for confirmation in rm globs*
-setopt RM_STAR_SILENT
+setopt SHARE_HISTORY # share history between sessions ???
+
+### Prompting
+setopt PROMPT_SUBST # parameter expansion, command substitution and arithmetic expansion are performed in prompts
+
+### Keybindings
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+autoload -U edit-command-line
 
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
@@ -61,49 +64,20 @@ bindkey "$terminfo[kcud1]" down-line-or-beginning-search
 bindkey "$terminfo[cuu1]" up-line-or-beginning-search
 bindkey "$terminfo[cud1]" down-line-or-beginning-search
 
-# backward and forward word with option+left/right
-bindkey '^[^[[D' backward-word
-bindkey '^[b' backward-word
-bindkey '^[^[[C' forward-word
-bindkey '^[f' forward-word
-
 # to to the beggining/end of line with fn+left/right or home/end
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey '^[[H' beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 bindkey '^[[F' end-of-line
 
-# delete char with backspaces and delete
-bindkey '^[[3~' delete-char
-bindkey '^?' backward-delete-char
-
-# delete word with ctrl+backspace
-bindkey '^[[3;5~' backward-delete-word
-# bindkey '^[[3~' backward-delete-word
-
 # edit command line in $EDITOR
 bindkey '^e' edit-command-line
 
 # search history with fzf if installed, default otherwise
 if test -d /usr/local/opt/fzf/shell; then
-	# shellcheck disable=SC1091
 	. /usr/local/opt/fzf/shell/key-bindings.zsh
 else
 	bindkey '^R' history-incremental-search-backward
 fi
 
-if [ $commands[fasd] ]; then # check if fasd is installed
-  fasd_cache=~/.fasd-init-cache
-  if [[ "$(command -v fasd)" -nt "$fasd_cache" || ! -s "$fasd_cache" ]]; then
-    fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install >| "$fasd_cache"
-  fi
-  source "$fasd_cache"
-  unset fasd_cache
-
-  alias o='a -e open'
-  alias j='zz'
-fi
-
-export TIPZ_TEXT='💡'
-
-export NTL_RUNNER=yarn
+TIPZ_TEXT='💡'

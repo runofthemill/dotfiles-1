@@ -21,7 +21,7 @@ packages=(
   committasks
   gatsby-cli
   npm
-  ntl # may need alias ntl='nocorrect ntl'
+  ntl # may need alias ntl='nocorrect ntl' & export NTL_RUNNER=yarn/npm
 )
 
 npm install --global "${packages[@]}"

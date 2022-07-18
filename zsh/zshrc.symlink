@@ -34,9 +34,8 @@ export VISUAL='code'
 typeset -U config_files
 config_files=($DOTFILES/*/*.zsh)
 
-# load everything but the completion, nocorrect
+# load everything but the completion
 for file in ${config_files:#*/completion.zsh}; do
-# echo "$file"
   source "$file"
 done
 
@@ -46,8 +45,6 @@ for dump in ~/.zcompdump(N.mh+24); do
   compinit
 done
 compinit -C
-
-unset config_files updated_at
 
 eval "$(fnm env --use-on-cd)"
 eval $(thefuck --alias)
@@ -62,5 +59,7 @@ for file in ${(M)config_files:#*/completion.zsh}; do
 done
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+
+unset config_files
 
 # zprof

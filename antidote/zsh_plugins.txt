@@ -1,4 +1,5 @@
 # this block is in alphabetic order
+agkozak/zsh-z
 caarlos0/ports kind:path
 gko/ssh-connect
 hlissner/zsh-autopair

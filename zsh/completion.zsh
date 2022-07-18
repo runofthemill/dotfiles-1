@@ -1,4 +1,3 @@
-#!/usr/bin/env zsh
 # forces zsh to realize new commands
 zstyle ':completion:*' completer _oldlist _expand _complete _match _ignored _approximate
 
@@ -19,3 +18,6 @@ zstyle ':completion:*' group-name ''
 
 # Make zsh know about hosts already accessed by SSH
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+
+# `zsh-autocomplete` settings
+zstyle ':autocomplete:*' min-input 1
