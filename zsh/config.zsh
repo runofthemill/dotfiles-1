@@ -50,34 +50,6 @@ setopt SHARE_HISTORY # share history between sessions ???
 setopt PROMPT_SUBST # parameter expansion, command substitution and arithmetic expansion are performed in prompts
 
 ### Keybindings
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-autoload -U edit-command-line
 
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-zle -N edit-command-line
-
-# fuzzy find: start to type
-bindkey "$terminfo[kcuu1]" up-line-or-beginning-search
-bindkey "$terminfo[kcud1]" down-line-or-beginning-search
-bindkey "$terminfo[cuu1]" up-line-or-beginning-search
-bindkey "$terminfo[cud1]" down-line-or-beginning-search
-
-# to to the beggining/end of line with fn+left/right or home/end
-bindkey "${terminfo[khome]}" beginning-of-line
-bindkey '^[[H' beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
-bindkey '^[[F' end-of-line
-
-# edit command line in $EDITOR
-bindkey '^e' edit-command-line
-
-# search history with fzf if installed, default otherwise
-if test -d /usr/local/opt/fzf/shell; then
-	. /usr/local/opt/fzf/shell/key-bindings.zsh
-else
-	bindkey '^R' history-incremental-search-backward
-fi
-
+### Other
 TIPZ_TEXT='💡'
