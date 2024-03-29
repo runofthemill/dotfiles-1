@@ -76,6 +76,11 @@ alias fix-spotlight='find . -type d -name "node_modules" -exec touch "{}/.metada
 # Random
 alias weather="curl -4 http://wttr.in"
 alias shrug="echo 'Â¯\_(ãƒ„)_/Â¯' | pbcopy"
+alias python="python3"
+alias py="python3"
+alias pip="pip3"
+alias venv="source venv/bin/activate"
+alias ap="ansible-playbook"
 
 #list whats inside packed file
 alias -s zip="unzip -l"
@@ -129,8 +134,35 @@ alias site='cd $(root)/site'
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"' # https://docs.docker.com/engine/reference/commandline/ps/#formatting
 alias dpsp='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"' # https://docs.docker.com/engine/reference/commandline/ps/#formatting
 alias dc='docker compose'
+alias dcu='docker compose up'
+alias dcud='docker compose up -d'
+alias dcd='docker compose down'
+alias dcdv='docker compose down -v'
 
 alias sail='./vendor/bin/sail'
 
 alias pubkey="more $HOME/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 alias copyssh="more $HOME/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
+alias vapor="php vendor/bin/vapor"
+
+alias tf='terraform'
+alias tfd='docker run --rm -it \
+   -v $IAC_PATH:/data \
+   -v ~/.kube:/root/.kube \
+   -v /var/run/docker.sock:/var/run/docker.sock \
+   -v /var/lib/docker:/var/lib/docker \
+   --env-file <(env | grep TF_VAR) \
+   --env-file <(env | grep TF_BACKEND) \
+   -e IAC_PATH \
+   -e WORKING_DIRECTORY=`pwd` \
+   --volumes-from gcloud-config \
+   iac:latest'
+
+alias k='kubectl'
+
+alias kcde='k config use-context gke_arryved-secure_us-central1_gke-wqoi'
+alias kdev='k config use-context gke_arryved-177921_us-central1_gke-hles'
+alias kprod='k config use-context gke_arryved-prod_us-central1_gke-ojrw'
+alias kstg='k config use-context gke_arryved-staging_us-central1_gke-yvqu'
+alias ktools='k config use-context gke_arryved-tools_us-central1_gke-xxxl'

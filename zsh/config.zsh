@@ -53,3 +53,4 @@ setopt PROMPT_SUBST # parameter expansion, command substitution and arithmetic e
 
 ### Other
 TIPZ_TEXT='💡'
+FNM_VERSION_FILE_STRATEGY=recursive

@@ -3,8 +3,9 @@
 
 [core]
   editor = code --wait --new-window
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/jeremymiller/.gitignore
   pager = diff-so-fancy | less -FXRi
+	ignorecase = false
 
 [init]
   defaultBranch = main
@@ -84,3 +85,16 @@
 
 [include]
   path = ~/.gitconfig.local
+[pull]
+	rebase = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
