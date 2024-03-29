@@ -18,6 +18,7 @@ brew 'bash'
 brew 'grep'
 
 # Install Binaries
+brew 'antidote'
 brew 'bat'
 brew 'composer'
 brew 'diff-so-fancy'

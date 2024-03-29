@@ -2,9 +2,6 @@
 
 echo "Setting up your Mac..."
 
-# Check for antidote install if we don't have it
-[[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
-
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -30,5 +27,3 @@ grep "/opt/homebrew/bin/zsh" /etc/shells &>/dev/null && chsh -s /opt/homebrew/bi
 # Set macOS preferences
 # -# We will run this last because this will reload the shell
 # -source .macos
-
-

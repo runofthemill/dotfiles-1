@@ -5,18 +5,11 @@ export DOTFILES="$HOME/.dotfiles"
 
 [[ ! -f "${HOME}/.iterm2_shell_integration.zsh" ]] || source "${HOME}/.iterm2_shell_integration.zsh"
 
-antidote_home=$DOTFILES/antidote
-zhome=${ZDOTDIR:-$HOME}
+ZDOTDIR=$DOTFILES/antidote
 
-if [[ ! $zhome/.zsh_plugins.zsh -nt $antidote_home/zsh_plugins.txt ]]; then
-  [[ -e $zhome/.antidote ]] \
-    || git clone --depth=1 https://github.com/mattmc3/antidote.git $zhome/.antidote
-  [[ -e $antidote_home/zsh_plugins.txt ]] || touch $antidote_home/zsh_plugins.txt
-  (
-    source $zhome/.antidote/antidote.zsh
-    antidote bundle <$antidote_home/zsh_plugins.txt >$zhome/.zsh_plugins.zsh
-  )
-fi
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+zstyle ':antidote:bundle' use-friendly-names on
+antidote load
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -39,7 +32,6 @@ for file in ${config_files:#*/completion.zsh}; do
   source "$file"
 done
 
-autoload -Uz $zhome/.antidote/functions/antidote
 autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
   compinit
@@ -47,8 +39,6 @@ done
 compinit -C
 
 # [ -f ~/.localrc ] && . ~/.localrc
-
-[[ ! -f ~/.zsh_plugins.zsh ]] || source ~/.zsh_plugins.zsh
 
 # Set IAC_PATH for iac - must be done before aliases are sourced
 export IAC_PATH=/Users/jeremymiller/workspace/iac
