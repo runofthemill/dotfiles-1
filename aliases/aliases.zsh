@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
 alias letmerun='xattr -d -r com.apple.quarantine'
-# exa
-alias l='exa'
-alias ll='exa -1'
-alias ls='exa -lhg --color-scale'
-alias la='exa -lhga --git --color-scale'
-alias lao='exa -lhFga --git -s=old --color-scale'
-alias lan='exa -lhFga --git -s=new --color-scale'
-alias lx='exa -lhHgUmua --git --color-scale'      # all list, aside from inode
-alias lxa='exa -lhHgUmuSai@ --git --color-scale'  # all + inode + extended list
-alias lt='exa --tree --level=2'                   # tree
 
 # Navigation
 alias ..="cd .."
@@ -39,7 +29,6 @@ else
 fi
 
 # Dotfiles
-alias dot="$VEDITOR $HOME/.dotfiles"
 alias dotfiles="$VEDITOR $HOME/.dotfiles"
 alias zshrc="$VEDITOR ~/.zshrc"
 
@@ -49,15 +38,6 @@ if command -v ggrep &>/dev/null; then
   alias -g grep="ggrep --color=auto"
 fi
 # alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
-
-# Vagrant
-alias v="vagrant"
-alias vg="vagrant global-status --prune"
-alias vup="vagrant up"
-alias vhalt="vagrant halt"
-alias vssh="vagrant ssh"
-alias vreload="vagrant reload"
-alias vrebuild="vagrant destroy --force && vagrant up"
 
 # brew
 alias b='brew'
@@ -113,23 +93,6 @@ alias -s ace="unace l"
 # alias sortnr='sort -n -r'
 # alias unexport='unset'
 
-root() {
-  local root
-  if [[ "$PWD" == *"/trellis"* ]]; then
-    root=${PWD%/trellis*}
-  elif [[ "$PWD" == *"/site"* ]]; then
-    root=${PWD%/site*}
-  elif [[ -d "$PWD/trellis" || -d "$PWD/site" ]]; then
-    root=${PWD}
-  fi
-
-  echo "$root"
-}
-
-alias theme='cd $(root)/site/web/app/themes/$(wp @dev option get stylesheet | cut -d/ -f1)'
-alias trellis='cd $(root)/trellis'
-alias site='cd $(root)/site'
-
 # Docker
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"' # https://docs.docker.com/engine/reference/commandline/ps/#formatting
 alias dpsp='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"' # https://docs.docker.com/engine/reference/commandline/ps/#formatting
@@ -139,30 +102,16 @@ alias dcud='docker compose up -d'
 alias dcd='docker compose down'
 alias dcdv='docker compose down -v'
 
-alias sail='./vendor/bin/sail'
-
 alias pubkey="more $HOME/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 alias copyssh="more $HOME/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
-alias vapor="php vendor/bin/vapor"
-
 alias tf='terraform'
-alias tfd='docker run --rm -it \
-   -v $IAC_PATH:/data \
-   -v ~/.kube:/root/.kube \
-   -v /var/run/docker.sock:/var/run/docker.sock \
-   -v /var/lib/docker:/var/lib/docker \
-   --env-file <(env | grep TF_VAR) \
-   --env-file <(env | grep TF_BACKEND) \
-   -e IAC_PATH \
-   -e WORKING_DIRECTORY=`pwd` \
-   --volumes-from gcloud-config \
-   iac:latest'
 
-alias k='kubectl'
+alias k='kubectl "--context=${KUBECTL_CONTEXT:-$(kubectl config current-context)}"'
 
-alias kcde='k config use-context gke_arryved-secure_us-central1_gke-wqoi'
-alias kdev='k config use-context gke_arryved-177921_us-central1_gke-hles'
-alias kprod='k config use-context gke_arryved-prod_us-central1_gke-ojrw'
-alias kstg='k config use-context gke_arryved-staging_us-central1_gke-yvqu'
-alias ktools='k config use-context gke_arryved-tools_us-central1_gke-xxxl'
+alias mux='tmuxinator'
+
+alias ppath='echo $PATH | tr : "\n"'
+
+# alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+# alias sa='sail artisan'
