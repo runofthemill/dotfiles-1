@@ -1,44 +1,53 @@
-# To-Do
- 
-- [ ] sort out `/bin`
-- [ ] move global npm packages to /usr/local
+# Mac
 
-### Apps not installed via dotfiles:
+How I setup a new Mac.
 
-- Screenie
-- Confide
-- Microsoft Office
+## 1. Install brew
 
-### Fonts not installed via dotfiles:
+```console
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
-- Klavika
-- Operator Mono
+## 2. Install deps
 
-## A Fresh macOS Setup
+```console
+git clone https://github.com/runofthemill/mac.git ~/.mac
+cd ~/.mac
+brew bundle
+```
 
-### Before you re-install
+## 3. Install dotfiles
 
-First, go through the checklist below to make sure you didn't forget anything before you wipe your hard drive.
+```console
+git clone https://github.com/runofthemill/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+./script/bootstrap
+zsh
+```
 
-- Did you commit and push any changes/branches to your git repositories?
-- Did you not forget any important documents in non-iCloud directories?
-- Did you save all of your work in apps which aren't synced through iCloud?
-- Did you not forget to export important data from your local database?
-- Did you update [mackup](https://github.com/lra/mackup) to the latest version and ran `mackup backup`?
+Not so-sensible defaults:
 
-### Setting up your Mac
+```console
+./macos/set-defaults
+```
 
-1. `sudo softwareupdate -i -a`
-2. `xcode-select --install`
-3. `git clone https://github.com/runofthemill/dotfiles-1 ~/.dotfiles`
-4. `cd ~/.dotfiles && source install.sh`
-5. `rm ~/.zshrc`
-6. `ln -s ~/.dotfiles/.zshrc ~/.zshrc`
-7. Restore preferences by running `mackup restore`
-8. Optional: `cd ~/.dotfiles/opt && brew bundle`
+## 4. Setup SSH keys
 
-Sync via Dropbox:
-- iTerm 2
-- Alfred
-- Dash
-- ST3???
+Create a new SSH key or copy the previous one into `~/.ssh`. That should be
+it.
+
+Also fix perms:
+
+```console
+$ chmod 0600 ~/.ssh/id_rsa
+```
+
+## 5. Reboot
+
+```console
+sudo reboot
+```
+
+## 6. Profit!
+
+:beers:

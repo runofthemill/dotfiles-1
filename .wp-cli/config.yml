@@ -1,9 +1,0 @@
-@oasisdev:
-  ssh: vagrant@oasis.test/srv/www/oasis.care/current
-@oasisstage:
-  ssh: admin@staging.oasis.care/srv/www/oasis.care/current
-@oasisprod:
-  ssh: admin@oasis.care/srv/www/oasis.care/current
-
-@grdev:
-  ssh: vagrant@gr.test/srv/www/garderobeonline.com/current

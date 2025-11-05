@@ -1,0 +1,204 @@
+{
+  "explorer.autoReveal": false,
+  "workbench.editor.revealIfOpen": true,
+  "window.openFilesInNewWindow": "on",
+  "window.openFoldersInNewWindow": "on",
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.keymap": "alternate",
+  "explorer.confirmDragAndDrop": false,
+  "search.location": "panel",
+  "emmet.triggerExpansionOnTab": true,
+  "blade.format.enable": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "window.zoomLevel": 0,
+  "editor.insertSpaces": false,
+  "editor.detectIndentation": true,
+  "gitlens.codeLens.enabled": false,
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 140,
+  "npm.enableScriptExplorer": true,
+  "debug.openDebug": "openOnDebugBreak",
+  "emmet.includeLanguages": {
+    "blade": "html"
+  },
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "editor.cursorStyle": "line",
+  "explorer.confirmDelete": false,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "files.autoGuessEncoding": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.selectionHighlight": false,
+  "eslint.autoFixOnSave": true,
+  "eslint.packageManager": "yarn",
+  "eslint.run": "onSave",
+  "html.format.indentInnerHtml": true,
+  "npm.packageManager": "yarn",
+  "php-docblocker.qualifyClassNames": true,
+  "php-docblocker.returnGap": true,
+  "php-docblocker.useShortNames": true,
+  "todohighlight.defaultStyle": {
+    "color": "red",
+    "backgroundColor": "#8cff00",
+    "overviewRulerColor": "#8cff00",
+    "cursor": "pointer",
+    "border": "1px solid #eee",
+    "borderRadius": "2px"
+    // "isWholeLine": true,
+  },
+  "files.associations": {
+    "Vagrantfile": "ruby",
+    "*.css": "scss",
+    "*.js": "javascriptreact"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "terminal.external.osxExec": "iTerm.app",
+  "php.suggest.basic": false,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "'Hack Nerd Font', 'Operator Mono Lig', Menlo, Monaco",
+  "editor.tokenColorCustomizations": {},
+  "editor.fontWeight": "400",
+  "editor.letterSpacing": 0.5,
+  "workbench.colorTheme": "Atom Material Theme",
+  "highlight-matching-tag.styles": {
+    "opening": {
+      "full": {
+        "custom": {
+          "textDecoration": "underline"
+        }
+      },
+      "left": {
+        "custom": {
+          "borderWidth": "0"
+        }
+      },
+      "right": {
+        "custom": {
+          "borderWidth": "0"
+        }
+      }
+    }
+  },
+  "window.clickThroughInactive": false,
+  "window.nativeTabs": true,
+  "editor.rulers": [
+    80
+  ],
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  "search.showLineNumbers": true,
+  "editor.stablePeek": true,
+
+  "workbench.fontAliasing": "auto",
+  "workbench.commandPalette.preserveInput": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.list.keyboardNavigation": "filter",
+  "breadcrumbs.enabled": true,
+  "workspaceExplorer.workspaceStorageDirectory": "/Users/jeremy/Projects/workspaces",
+  "explorer.sortOrder": "type",
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#b52e31"
+    },
+    {
+      "name": "Auth0 Orange",
+      "value": "#eb5424"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "C# Purple",
+      "value": "#68217A"
+    },
+    {
+      "name": "Gatsby Purple",
+      "value": "#639"
+    },
+    {
+      "name": "Go Cyan",
+      "value": "#5dc9e2"
+    },
+    {
+      "name": "Java Blue-Gray",
+      "value": "#557c9b"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#00b3e6"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    }
+  ],
+  "workbench.quickOpen.closeOnFocusLost": false,
+  "phpcs.executablePath": "/Users/jeremy/.composer/vendor/bin/phpcs",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "explorer.openEditors.visible": 0,
+  "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
+  "editor.minimap.maxColumn": 200,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.showSlider": "always",
+  "editor.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "gitlens.blame.ignoreWhitespace": true,
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "sync.gist": "54d397e7a6c1c5f97679731d3e3ae84a",
+  "bracketPairColorizer.forceIterationColorCycle": true,
+  "bracketPairColorizer.colorMode": "Consecutive",
+  "bracketPairColorizer.highlightActiveScope": true,
+  "bracketPairColorizer.activeScopeCSS": [
+    "borderStyle : solid",
+    "borderWidth : 1px",
+    "borderColor : {color}; opacity: 0.5",
+    "backgroundColor : {color}"
+  ],
+  "bracketPairColorizer.showBracketsInGutter": true,
+  "editor.matchBrackets": false,
+  "bracketPairColorizer.showBracketsInRuler": true,
+  "htmlhint.options": {
+    "attr-lowercase": false
+  },
+  "[php]": {
+    "editor.defaultFormatter": "persoderlind.vscode-phpcbf"
+  },
+  "editor.gotoLocation.multiple": "gotoAndPeek",
+  "editor.renderFinalNewline": false,
+  "editor.tabCompletion": "on",
+  "workbench.panel.defaultLocation": "right",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+}

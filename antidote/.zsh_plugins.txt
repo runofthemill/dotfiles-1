@@ -1,0 +1,6 @@
+agkozak/zsh-z
+hlissner/zsh-autopair
+marzocchi/zsh-notify
+romkatv/powerlevel10k
+zsh-users/zsh-completions
+marlonrichert/zsh-hist

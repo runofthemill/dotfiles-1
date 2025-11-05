@@ -1,0 +1,61 @@
+.java-version
+.DS_Store
+.svn
+*~
+*.swp
+*.orig
+*.rbc
+.idea
+*.iml
+.classpath
+.project
+.settings
+.ruby-version
+.vscode/
+dump.rdb
+main.tfvars
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# Other files #
+###########################
+*.sublime-workspace
+wp-migrate-db-pro-compatibility.php
+*alias
+Project Resources
+*.code-workspace
+*.patch
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea/
+.vagrant/

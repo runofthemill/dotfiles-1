@@ -1,14 +1,8 @@
 # Taps
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
-tap 'caskroom/drivers'
+tap 'homebrew/services'
 
 # Install ZSH
 brew 'zsh'
-brew 'zsh-autosuggestions'
-brew 'zsh-completions'
-brew 'zsh-syntax-highlighting'
 
 # Install GNU core utilities (those that come with macOS are outdated)
 brew 'coreutils'
@@ -16,158 +10,99 @@ brew 'coreutils'
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew 'findutils'
 
-# Install Bash 4
+# Install Bash 5
 brew 'bash'
 
 # Install more recent versions of some macOS tools
 brew 'grep'
 
 # Install Binaries
-brew 'ansible'
+brew 'antidote'
+brew 'bat'
 brew 'composer'
 brew 'diff-so-fancy'
-brew 'exa'
-brew 'fasd'
-brew 'gifify'
+brew 'fzf'
+brew 'gh'
 brew 'git'
-brew 'git-flow'
 brew 'highlight'
 brew 'httpie'
-brew 'hub'
-brew 'mackup'
+brew 'jq'
+brew 'lnav'
 brew 'mas'
+brew 'mkcert'
 brew 'nano'
-brew 'neovim'
-brew 'nginx'
-# brew 'node' - might need as nvm gets installed at the end?
+brew 'node'
+brew 'peco'
 brew 'ssh-copy-id'
 brew 'thefuck'
 brew 'tidy-html5'
+brew 'tldr'
 brew 'trash'
 brew 'tree'
 brew 'unar'
 brew 'wget'
 brew 'wifi-password'
-brew 'yarn --without-node'
+brew 'yarn'
 
 # Development
 brew 'dnsmasq'
 brew 'php'
-brew 'mariadb'
-brew 'wp-cli'
-brew 'pre-commit'
+brew 'terminal-notifier'
 
 # Apps
-cask 'adobe-acrobat-reader'
-cask 'alfred'
+# cask '1password'
+# cask 'alfred'
 cask 'appcleaner'
 cask 'bartender'
-cask 'beardedspice'
-cask 'betterzip'
+# cask 'docker'
 cask 'caffeine'
-cask 'cheatsheet'
-cask 'cyberduck'
-cask 'dash'
-cask 'dropbox'
-cask 'endurance'
-cask 'eve'
-cask 'evernote'
-cask 'firefox'
-cask 'flash-player'
-cask 'flux'
+# cask 'dash'
+# cask 'endurance'
+# cask 'flux'
 cask 'forklift'
-cask 'franz'
-cask 'gitkraken'
-cask 'google-chrome'
-cask 'hammerspoon'
-cask 'hyper'
+# cask 'google-chrome'
+# cask 'hammerspoon'
+cask 'iglance'
 cask 'insomnia'
-cask 'iterm2'
-cask 'jadengeller-helium'
+# cask 'iterm2'
 cask 'karabiner-elements'
-cask 'local-by-flywheel'
-cask 'logitech-gaming-software'
-cask 'logitech-options'
-cask 'logitech-unifying'
 cask 'macdown'
 cask 'muzzle'
-cask 'now'
-cask 'phpstorm'
 cask 'postman'
-cask 'private-internet-access'
-cask 'screenflow'
-cask 'sequel-pro'
-cask 'shuttle'
-cask 'silverlight'
-cask 'sketch'
-cask 'skitch'
-cask 'slack'
-cask 'spacelauncher'
-cask 'spectacle'
+# cask 'private-internet-access'
+cask 'rectangle'
+# cask 'screenflow'
+# cask 'shuttle'
+# cask 'sketch' 
+# cask 'spacelauncher'
 cask 'spotify'
-cask 'station'
-cask 'sublime-text'
-cask 'the-unarchiver'
+# cask 'tableplus'
+cask 'there'
 cask 'transmission'
-cask 'transmit'
-cask 'ui-browser'
-cask 'vagrant'
-cask 'vagrant-manager'
-cask 'virtualbox' # will fail :(
-cask 'visual-studio-code'
-cask 'vlc'
-cask 'zoomus'
+# cask 'ui-browser'
+# cask 'visual-studio-code'
+# cask 'vlc'
 
 # Quicklook
+cask 'apparency' #conflict?
+cask 'betterzip'
 cask 'qlcolorcode'
 cask 'qlmarkdown'
-cask 'qlstephen'
 cask 'qlvideo'
-cask 'qlimagesize'
 cask 'quicklook-json'
 cask 'suspicious-package'
+cask 'syntax-highlight' #conflict?
 cask 'webpquicklook'
 
-# Fonts
-cask 'font-droidsansmono-nerd-font-mono'
-cask 'font-fira-code'
-cask 'font-fira-mono'
-cask 'font-fira-sans'
-cask 'font-firacode-nerd-font-mono'
-cask 'font-firamono-nerd-font-mono'
-cask 'font-hack'
-cask 'font-hack-nerd-font'
-cask 'font-hack-nerd-font-mono'
-cask 'font-inconsolata-g-for-powerline'
-cask 'font-input'
-cask 'font-lato'
-cask 'font-lora'
-cask 'font-merriweather'
-cask 'font-montserrat'
-cask 'font-noto-sans'
-cask 'font-noto-sans-mono'
-cask 'font-office-code-pro'
-cask 'font-open-sans'
-cask 'font-open-sans-condensed'
-cask 'font-pt-sans'
-cask 'font-raleway'
-cask 'font-roboto'
-cask 'font-roboto-condensed'
-cask 'font-roboto-slab'
-cask 'font-robotomono-nerd-font-mono'
-cask 'font-source-code-pro'
-cask 'font-source-code-pro-for-powerline'
-cask 'font-source-sans-pro'
-cask 'font-source-serif-pro'
-cask 'font-ubuntu-nerd-font'
-cask 'font-ubuntu-nerd-font-mono'
-cask 'font-ubuntumono-nerd-font'
-cask 'font-ubuntumono-nerd-font-mono'
-
 # Install Mac App Store apps
-mas '1Password', id: 443987910
-mas 'Fantastical 2', id: 975937182
-mas 'Giphy Capture', id: 668208984
-mas 'Kaleidoscope', id: 587512244
-mas 'Spark', id: 1176895641
+mas "Dato", id: 1470584107
+# mas "Fantastical", id: 975937182
+#mas "Frank DeLoupe", id: 530458789
+# mas "GIPHY CAPTURE", id: 668208984
+# mas 'Kaleidoscope', id: 587512244
+# mas "Magnet", id: 441258766
+# mas "Numbers", id: 409203825
+# mas "Pages", id: 409201541
+mas "Redacted", id: 984968384
+# mas "Xcode", id: 497799835
 mas 'Yoink', id: 457622435

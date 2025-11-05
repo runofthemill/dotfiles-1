@@ -1,8 +1,0 @@
-# Optional
-
-# Gaming
-cask 'discord'
-cask 'eve-launcher'
-cask 'league-of-legends'
-cask 'mumble'
-cask 'nvidia-geforce-now'

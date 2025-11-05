@@ -1,0 +1,88 @@
+setopt interactivecomments
+source ~/workspace/zsh-autocomplete/zsh-autocomplete.plugin.zsh # zsh-autocomplete is installed via homebrew
+
+export DOTFILES="$HOME/.dotfiles"
+
+# [[ ! -f "${HOME}/.iterm2_shell_integration.zsh" ]] || source "${HOME}/.iterm2_shell_integration.zsh"
+
+ZDOTDIR=$DOTFILES/antidote
+zstyle ':antidote:bundle' use-friendly-names on
+
+zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
+
+# Ensure the .zsh_plugins.txt file exists
+[[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
+
+# Lazy-load antidote from its functions directory.
+fpath=($(brew --prefix)/opt/antidote/share/antidote/functions $fpath)
+autoload -Uz antidote
+
+# Generate a new static file whenever .zsh_plugins.txt is updated.
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+  antidote bundle <${zsh_plugins}.txt >|${zsh_plugins}.zsh
+fi
+
+# Source static plugins file.
+source ${zsh_plugins}.zsh
+
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# default editor
+export EDITOR='nano'
+export VEDITOR='code'
+export VISUAL='code'
+
+# all of our zsh files
+typeset -U config_files
+config_files=($DOTFILES/*/*.zsh)
+
+# load everything but the completion
+for file in ${config_files:#*/completion.zsh}; do
+  source "$file"
+done
+
+# autoload -Uz compinit
+# for dump in ~/.zcompdump(N.mh+24); do
+#   compinit
+# done
+# compinit -C
+
+# load every completion after autocomplete loads
+for file in ${(M)config_files:#*/completion.zsh}; do
+  source "$file"
+done
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+
+unset config_files
+
+# start PATH changes
+prepend=()
+append=()
+
+prepend+=$HOME/.config/phpmon/bin # https://github.com/nicoverbruggen/phpmon/wiki/PHP-Monitor-helper-binaries
+prepend+=$HOME/.composer/vendor/bin
+prepend+=/opt/homebrew/opt/ruby/bin
+
+append+=$HOME/.local/bin
+
+path=($prepend $path $append)
+
+typeset -TUx PATH path # dedupe, export; https://stackoverflow.com/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh/18077919#comment72796046_18077919
+# end PATH changes
+
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+eval "$(mise activate zsh)"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/jeremymiller/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
