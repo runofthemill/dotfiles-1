@@ -86,25 +86,3 @@ fpath=(/Users/jeremymiller/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
-
-artisan () {
-    pushd . > /dev/null
-    while test ! -e artisan; do
-        [[ $PWD == '/' ]] && break
-        cd .. > /dev/null
-    done
-    test -e artisan && php artisan "$@"
-    popd > /dev/null
-}
-
-sail () { 
-    pushd . > /dev/null;
-    while test ! -e artisan; do
-        [[ $PWD == '/' ]] && break;
-        cd .. > /dev/null;
-    done;
-    test -e artisan && { 
-        vendor/laravel/sail/bin/sail "$@";
-    };
-    popd > /dev/null
-}

@@ -115,3 +115,25 @@ alias ppath='echo $PATH | tr : "\n"'
 
 # alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 # alias sa='sail artisan'
+
+artisan () {
+    pushd . > /dev/null
+    while test ! -e artisan; do
+        [[ $PWD == '/' ]] && break
+        cd .. > /dev/null
+    done
+    test -e artisan && php artisan "$@"
+    popd > /dev/null
+}
+
+sail () { 
+    pushd . > /dev/null;
+    while test ! -e artisan; do
+        [[ $PWD == '/' ]] && break;
+        cd .. > /dev/null;
+    done;
+    test -e artisan && { 
+        vendor/laravel/sail/bin/sail "$@";
+    };
+    popd > /dev/null
+}
